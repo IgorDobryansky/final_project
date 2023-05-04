@@ -16,5 +16,5 @@ export default defineConfig({
     port: 8383 // port
   },
   plugins: [react()], // vite plugins
-  base: '/final_project/'
+  base: '/final_project/' // configure path to auto-deploy process
 });

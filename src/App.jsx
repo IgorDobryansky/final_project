@@ -2,7 +2,7 @@ import React from 'react';
 import './assets/styles/style.scss';
 
 function App() {
-  return <div>App</div>;
+  return <div>Базовая сборка проекта (:</div>;
 }
 
 export default App;

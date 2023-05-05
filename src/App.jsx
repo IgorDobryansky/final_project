@@ -1,15 +1,12 @@
-import React from "react";
-import "./assets/styles/style.scss";
+import React from 'react';
 
-function Lol() {
-  console.log("kek");
-}
-function asdasdl() {
-  console.log("kek");
-}
-
-function App() {
-  return <div>Базовая сборка проекта </div>;
+function App(props) {
+  const ololo = "123"
+  return (
+    <div>
+      
+    </div>
+  );
 }
 
 export default App;

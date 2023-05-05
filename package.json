@@ -8,6 +8,11 @@
     "build": "npm run lint & vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --fix",

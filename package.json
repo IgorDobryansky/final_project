@@ -12,7 +12,8 @@
     "*.{js,jsx}": [
       "eslint --fix",
       "git add"
-    ],
+    ]
+  },
   "dependencies": {
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",

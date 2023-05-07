@@ -3,11 +3,18 @@ module.exports = {
   extends: ['airbnb', 'airbnb/hooks'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
+  plugins: [],
   rules: {
-    'react-refresh/only-export-components': 'warn',
+    'arrow-body-style': ['error', 'as-needed'],
     'linebreak-style': ['error', 'unix'],
     'comma-dangle': ['error', 'never'],
-    'operator-linebreak': ['error', 'after']
+    'operator-linebreak': ['error', 'after'],
+    'react/self-closing-comp': [
+      'error',
+      {
+        component: true,
+        html: true
+      }
+    ]
   }
 };

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import eslint from 'vite-plugin-eslint';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,6 +16,9 @@ export default defineConfig({
     open: true, // open on start
     port: 8383 // port
   },
-  plugins: [react()], // vite plugins
+  plugins: [
+    react(),
+    { ...eslint({ failOnWarning: false, failOnError: false }) }
+  ], // vite plugins
   base: '/final_project/' // configure path to auto-deploy process
 });

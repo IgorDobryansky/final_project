@@ -3,8 +3,7 @@ import React from 'react';
 function App() {
   return (
     <div>
-      <span />
-      <p />
+      123
     </div>
   );
 }

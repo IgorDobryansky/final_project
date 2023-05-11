@@ -14,7 +14,7 @@ export default defineConfig({
   server: {
     // configure dev server
     open: true, // open on start
-    port: 8383 // port
+    port: 3000 // port
   },
   plugins: [
     react(),

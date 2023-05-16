@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run lint & vite build",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix"
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.8",
@@ -28,9 +29,12 @@
   "devDependencies": {
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.3",
+    "prettier": "2.8.8"
   }
 }

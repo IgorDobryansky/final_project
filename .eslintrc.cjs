@@ -3,7 +3,7 @@ module.exports = {
   extends: ["airbnb", "airbnb/hooks", "prettier"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
-  plugins: [],
+  plugins: ["prettier"],
   rules: {
     "prettier/prettier": "error",
     quotes: ["error", "double"],

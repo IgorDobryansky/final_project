@@ -1,6 +1,6 @@
 module.exports = {
   env: { browser: true, es2020: true },
-  extends: ["prettier", "airbnb", "airbnb/hooks"],
+  extends: ["airbnb", "airbnb/hooks", "prettier"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
   plugins: [],

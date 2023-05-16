@@ -7,7 +7,7 @@ module.exports = {
   rules: {
     quotes: ["error", "double"],
     "arrow-body-style": ["error", "as-needed"],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": 0,
     "comma-dangle": ["error", "never"],
     "operator-linebreak": ["error", "after"],
     "react/self-closing-comp": [

@@ -5,6 +5,7 @@ module.exports = {
   settings: { react: { version: "18.2" } },
   plugins: [],
   rules: {
+    "prettier/prettier": "error",
     quotes: ["error", "double"],
     "arrow-body-style": ["error", "as-needed"],
     "linebreak-style": 0,

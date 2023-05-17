@@ -1,22 +1,19 @@
 module.exports = {
   env: { browser: true, es2020: true },
-  extends: ["airbnb", "airbnb/hooks", "prettier"],
+  extends: [
+    "plugin:import/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:prettier/recommended"
+  ],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
   plugins: ["prettier"],
   rules: {
     "prettier/prettier": "error",
-    quotes: ["error", "double"],
-    "arrow-body-style": ["error", "as-needed"],
-    "linebreak-style": 0,
-    "comma-dangle": ["error", "never"],
-    "operator-linebreak": ["error", "after"],
-    "react/self-closing-comp": [
-      "error",
-      {
-        component: true,
-        html: true
-      }
-    ]
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "comma-dangle": ["error", "never"]
   }
 };

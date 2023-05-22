@@ -10,10 +10,14 @@ module.exports = {
   settings: { react: { version: "18.2" } },
   plugins: ["prettier"],
   rules: {
-    "prettier/prettier": "error",
     "arrow-body-style": "off",
+    "no-underscore-dangle": [
+      "error",
+      { allow: ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }
+    ],
     "prefer-arrow-callback": "off",
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "prettier/prettier": "error"
   }
 };

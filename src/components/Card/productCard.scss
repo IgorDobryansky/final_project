@@ -1,0 +1,70 @@
+.card {
+    padding-top: 32px;
+
+    &__wrapper {
+        display: flex;
+        padding-top: 27px;
+    }
+
+    &__image {
+        width: 565px;
+        height: 622px;
+        background-color: grey;
+        margin-right: 30px;
+    }
+
+    &__description {
+        width: 684px;
+
+        &_available {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 37px;
+        }
+    }
+
+    &__content {
+        margin-bottom: 44px;
+    }
+}
+
+
+.carusel {
+    width: 89px;
+    height: 622px;
+    background-color: antiquewhite;
+    margin-right: 30px;
+}
+
+.icon_vector {
+    width: 13px;
+    height: 11px;
+}
+
+.card_description-available-item{
+    color: rgba(75, 113, 89, 1);
+}
+
+h1 {
+    margin-bottom: 43px;
+}
+
+h3 {
+    margin-bottom: 15px;
+   
+
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+
+    &__amount{
+        display: flex;
+    }
+
+    &__now {
+        margin-right: 32px;
+    }
+
+}

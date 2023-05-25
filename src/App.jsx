@@ -1,7 +1,8 @@
 import React from "react";
+import Card from './components/Card'
 
 function App() {
-  return <div>123</div>;
+  return <Card/>;
 }
 
 export default App;

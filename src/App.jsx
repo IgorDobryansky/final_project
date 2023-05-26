@@ -1,11 +1,11 @@
-import React from "react";
-import "./assets/styles/style.scss";
+import React from 'react';
+import './assets/styles/style.scss';
 
 function Lol() {
-  console.log("kek");
+  console.log('kek');
 }
 function asdasdl() {
-  console.log("kek");
+  console.log('kek');
 }
 
 function App() {

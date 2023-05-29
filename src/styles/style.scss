@@ -1,3 +1,14 @@
+@import "fonts";
 @import "reset";
 @import "variables";
 @import "mixin";
+@import "basket";
+
+body {
+  background-color: rgb(229, 229, 229);
+}
+
+.main {
+  max-width: 1400px;
+  margin-inline: auto;
+}

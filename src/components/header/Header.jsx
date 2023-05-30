@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import mainLogo from "./images/main-logo.png";
-import heartLogo from "./images/heart-logo.png";
-import cabinetLogo from "./images/cabinet-logo.png";
-import carttLogo from "./images/shopping-cart-logo.png";
+import "../../styles/_header.scss";
+
+import mainLogo from "../../assets/images/header/main-logo.png";
+import heartLogo from "../../assets/images/header/heart-logo.png";
+import cabinetLogo from "../../assets/images/header/cabinet-logo.png";
+import carttLogo from "../../assets/images/header/shopping-cart-logo.png";
 
 function Header() {
   return (

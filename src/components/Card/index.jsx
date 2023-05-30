@@ -5,6 +5,9 @@ import './productCard.scss';
 import Grid from '@mui/material/Grid';
 import product from './image/product.png';
 import vector from './image/vector.png';
+import twitter from './image/twitter.png';
+import facebook from './image/facebook.png';
+import instagram from './image/instagram.png';
 
 export default function Card () {
 
@@ -36,12 +39,28 @@ export default function Card () {
                             <p className='price__old'>1 253 грн</p>
                         </div>
                     </div>
+                    <div className='button_wrapper'>
+                        <div className='button_count'>
+                            <button>+</button>
+                            <p className='button_count_amount'>1</p>
+                            <button>-</button>
+                        </div>
+                        <button className='button_buy'>Придбати</button>   
+                    </div>
                     <div>
-                    <ButtonGroup variant="contained" aria-label="outlined button group">
-                        <Button>One</Button>
-                        <p>1</p>
-                        <Button>Three</Button>
-                    </ButtonGroup>
+                        <a href="#">Поділитися</a>
+                        <div>
+                        <a href="#">
+                            <img src={twitter} alt="Twitter"/>
+                        </a>
+                        <a href="#">
+                            <img src={facebook} alt="Facebook"/>
+                        </a>
+                        <a href="#">
+                            <img src={instagram} alt="Instagram"/>
+                        </a>
+                        </div>
+                        
                     </div>
 
                 </div>

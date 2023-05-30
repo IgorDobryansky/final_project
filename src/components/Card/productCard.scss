@@ -58,6 +58,7 @@ h3 {
 .price {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 33px;
 
     &__amount{
         display: flex;
@@ -66,5 +67,41 @@ h3 {
     &__now {
         margin-right: 32px;
     }
-
 }
+
+.button {    
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 37px;
+        border-bottom: 1px solid rgba(230, 232, 231, 1);
+    }
+
+    &_count {
+        display: flex;
+        border: 1px solid rgba(230, 232, 231, 1);  
+    
+        button {
+            background-color: white;
+            width: 50px;
+            height: 50px;
+        }
+        
+        &_amount {
+            border-left: 1px solid rgba(230, 232, 231, 1);
+            border-right: 1px solid rgba(230, 232, 231, 1);
+            width: 104px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &_buy {
+        width: 446px;
+        height: 50px;
+        background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+        color: #FFFFFF;
+    }
+}
+

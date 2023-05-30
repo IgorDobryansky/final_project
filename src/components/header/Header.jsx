@@ -24,7 +24,7 @@ function Header() {
               <Link to="/final_project/catalog">Каталог</Link>
             </li>
             <li>
-              <Link to="/final_project/delivery">Доставка</Link>
+              <Link to="/final_project/delivery">оставка</Link>
             </li>
             <li>
               <Link to="/final_project/aboutUs">Про нас</Link>

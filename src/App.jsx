@@ -8,9 +8,9 @@ import Home from "./pages/Home";
 import Delivery from "./pages/Delivery";
 import Contacts from "./pages/Contacts";
 import Order from "./pages/Order";
+import Basket from "./pages/Basket";
 
-function App() {
-  return (
+const App = () => (
     <Routes>
       <Route path="/final_project" element={<Home />}>
         <Route path="aboutUs" element={<AboutUs />} />
@@ -20,9 +20,8 @@ function App() {
         <Route path="delivery" element={<Delivery />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="order" element={<Order />} />
+        <Route path="basket" element={<Basket />} />
       </Route>
     </Routes>
-  );
-}
-
+);
 export default App;

@@ -2,6 +2,7 @@
 @import "reset";
 @import "variables";
 @import "mixin";
+@import "basket";
 
 @import "order";
 @import "form";
@@ -9,4 +10,9 @@
 
 body {
   background-color: rgb(229, 229, 229);
+}
+
+.main {
+  max-width: 1400px;
+  margin-inline: auto;
 }

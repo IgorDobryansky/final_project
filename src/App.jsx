@@ -7,6 +7,7 @@ import Product from "./components/product/Product";
 import Home from "./pages/Home";
 import Delivery from "./pages/Delivery";
 import Contacts from "./pages/Contacts";
+import Order from "./pages/Order";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Route>
         <Route path="delivery" element={<Delivery />} />
         <Route path="contacts" element={<Contacts />} />
+        <Route path="order" element={<Order />} />
       </Route>
     </Routes>
   );

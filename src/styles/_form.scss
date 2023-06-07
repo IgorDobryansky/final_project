@@ -1,0 +1,67 @@
+form {
+  display: flex;
+  .hr {
+    border: 1px solid #E6E8E7;
+    max-width: 100%;
+    margin: 35px 0;
+  }
+
+  .input_text {
+    display: flex;
+
+    input {
+      border: 1px solid #A1A1A1;
+      padding: 11px 112px 16px 16px;
+      margin-top: 30px;
+      margin-right: 30px;
+      color: #A1A1A1;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+
+    }
+  }
+
+
+  .radio_btn {
+    color: #A1A1A1;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+
+    &:hover {
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    .radio_btn_text {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      color: #031412;
+      padding: 20px 0;
+    }
+
+    input:checked + .radio_btn_title {
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    .form_right{
+      display: flex;
+    }
+  }
+
+
+}

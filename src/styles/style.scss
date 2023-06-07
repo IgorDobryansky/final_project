@@ -1,3 +1,4 @@
+@import "fonts";
 @import "reset";
 @import "variables";
 @import "mixin";
@@ -5,3 +6,7 @@
 @import "order";
 @import "form";
 @import "scrollOrder";
+
+body {
+  background-color: rgb(229, 229, 229);
+}

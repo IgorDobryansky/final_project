@@ -12,60 +12,183 @@
   .header-wrapper {
     width: 1400px;
     display: flex;
-    .logo-element {
-      width: 194px;
-      padding: 20px 0;
+    .menu {
+      display: none;
+    }
+    .logo {
+      width: 153px;
+      height: 96px;
+      .logo-element {
+        width: 153px;
+        padding: 20px 0;
+      }
+    }
+    .nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .nav-list {
+        display: flex;
+        li {
+          padding: 62px 0 0 52px;
+          font-family: "Montserrat";
+          font-weight: 400;
+          font-size: 16px;
+          a:hover {
+            color: rgb(163, 106, 0);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .pages-list {
+      width: 190px;
+      margin-bottom: 35px;
+      display: flex;
+      justify-content: space-between;
+      li {
+        width: 50px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        img {
+          width: 30px;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 25px;
+          width: 30px;
+          span {
+            color: rgba(228, 161, 111, 1);
+            font-family: Mont;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;
+          }
+          img {
+            margin: 0;
+          }
+        }
+      }
     }
   }
 }
 
-.nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  .nav-list {
-    display: flex;
-    li {
-      padding: 62px 0 0 52px;
-      font-family: "Montserrat";
-      font-weight: 400;
-      font-size: 16px;
+@media screen and (min-width: 768px) and (max-width: 1399px) {
+  .header {
+    .header-wrapper {
+      width: 640px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      .nav {
+        padding-top: 170px;
+        justify-content: center;
+        .nav-list {
+          width: 500px;
+          position: absolute;
+          bottom: 30px;
+          display: flex;
+          justify-content: space-between;
+          li {
+            padding: 0;
+          }
+        }
+      }
     }
   }
-
-  .nav-other {
-    width: 190px;
-    margin-bottom: 35px;
-    display: flex;
-    justify-content: space-between;
-    li {
-      width: 50px;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      img {
-        margin-top: 40px;
-        width: 30px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .header {
+    .header-wrapper {
+      width: 320px;
+      justify-content: space-between;
+      align-items: flex-start;
+      .menu {
+        display: block;
+        button {
+          height: 42px;
+          img {
+            width: 60px;
+          }
+        }
+        .menu-list {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 55%;
+          height: 100vh;
+          z-index: 2;
+          background: linear-gradient(92.18deg, #e4a16f 20.13%, #5e3928 92.93%);
+          li {
+            font-family: Montserrat;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 15px;
+            letter-spacing: 0em;
+            text-align: start;
+            margin: 15px 0 0 5px;
+          }
+          p {
+            display: flex;
+            flex-direction: column;
+            padding-top: 150px;
+            font-family: Montserrat;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 15px;
+            letter-spacing: 0em;
+            text-align: start;
+            margin: 15px 0 0 5px;
+            span {
+              font-size: 12px;
+              font-weight: 500;
+              margin-left: 10px;
+            }
+          }
+        }
       }
-      div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 25px;
-        width: 30px;
-        span {
-          color: rgba(228, 161, 111, 1);
-          font-family: Mont;
-          font-size: 20px;
-          font-weight: 900;
-          line-height: 24px;
-          letter-spacing: 0em;
-          text-align: left;
+      .logo {
+        .logo-element {
+          width: 124px;
         }
-        img {
-          margin: 0;
+      }
+      .nav {
+        display: none;
+      }
+      .pages {
+        .pages-list {
+          width: 130px;
+          justify-content: space-evenly;
+          li {
+            width: 35px;
+            &:last-child {
+              display: none;
+            }
+            a {
+              margin-top: 40px;
+            }
+            img {
+              width: 21px;
+            }
+          }
         }
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
       }
     }
   }

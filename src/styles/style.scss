@@ -2,10 +2,10 @@
 @import "reset";
 @import "variables";
 @import "mixin";
-
 @import "header";
 @import "footer";
+@import "home";
 
 body {
-  background-color: rgb(229, 229, 229);
+  background-color: rgb(255, 255, 255);
 }

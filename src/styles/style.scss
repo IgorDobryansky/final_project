@@ -3,7 +3,9 @@
 @import "variables";
 @import "mixin";
 @import "basket";
-
+@import "header";
+@import "footer";
+@import "home";
 @import "order";
 @import "form";
 @import "scrollOrder";
@@ -19,3 +21,4 @@ body {
   max-width: 1400px;
   margin-inline: auto;
 }
+

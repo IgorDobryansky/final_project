@@ -1,50 +1,23 @@
 import React from "react";
 
-function Scroll() {
-  const items = [
-    {
-      id: 1,
-      image: "#",
-      name: "Product 1",
-      quantity: 3,
-      price: 10.99
-    },
-    {
-      id: 2,
-      image: "#",
-      name: "Product 2",
-      quantity: 5,
-      price: 15.99
-    },
-    {
-      id: 1,
-      image: "#",
-      name: "Product 1",
-      quantity: 3,
-      price: 10.99
-    },
-    {
-      id: 2,
-      image: "#",
-      name: "Product 2",
-      quantity: 5,
-      price: 15.99
-    }
-  ];
-
-  return (
-    <div className="scroll-container">
+const Scroll = ({ items }) => (
+  <div className="scroll-container">
+    <div className="scroll-content">
       {items.map((item) => (
         <div key={item.id} className="item">
-          <img src={item.image} alt={item.name} />
-          <h3>{item.name}</h3>
-          <p>Quantity: {item.quantity}</p>
-          <p>Price: ${item.price}</p>
-          <div className="hr" />
+          <img src={item.image} alt={item.name} className="order_img" />
+          <div className="item_content">
+            <h3 className="name">{item.name}</h3>
+            <div className="block_price">
+              <p className="quantity">{item.quantity}шт.</p>
+              <p className="price">{item.price}грн</p>
+            </div>
+            <p className="last_price">{item.lastPrice}</p>
+          </div>
         </div>
       ))}
     </div>
-  );
-}
+  </div>
+);
 
 export default Scroll;

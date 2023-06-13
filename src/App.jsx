@@ -11,17 +11,17 @@ import Order from "./pages/Order";
 import Basket from "./pages/Basket";
 
 const App = () => (
-    <Routes>
-      <Route path="/final_project" element={<Home />}>
-        <Route path="aboutUs" element={<AboutUs />} />
-        <Route path="catalog/" element={<Catalog />}>
-          <Route path=":productId" element={<Product />} />
-        </Route>
-        <Route path="delivery" element={<Delivery />} />
-        <Route path="contacts" element={<Contacts />} />
-        <Route path="order" element={<Order />} />
-        <Route path="basket" element={<Basket />} />
+  <Routes>
+    <Route path="/final_project" element={<Home />}>
+      <Route path="aboutUs" element={<AboutUs />} />
+      <Route path="catalog/" element={<Catalog />}>
+        <Route path=":productId" element={<Product />} />
       </Route>
-    </Routes>
+      <Route path="delivery" element={<Delivery />} />
+      <Route path="contacts" element={<Contacts />} />
+      <Route path="order" element={<Order />} />
+      <Route path="basket" element={<Basket />} />
+    </Route>
+  </Routes>
 );
 export default App;

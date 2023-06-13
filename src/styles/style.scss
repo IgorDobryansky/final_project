@@ -2,8 +2,10 @@
 @import "reset";
 @import "variables";
 @import "mixin";
+@import "header";
+@import "footer";
+@import "home";
 @import "basket";
-
 @import "order";
 @import "form";
 @import "scrollOrder";
@@ -12,10 +14,4 @@
 body {
   background-color: rgb(255, 255, 255);
 
-}
-
-
-.main {
-  max-width: 1400px;
-  margin-inline: auto;
 }

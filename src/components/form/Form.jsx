@@ -23,9 +23,9 @@ const Form = (props) => {
         <OrderHeader />
         <div className="input_text">
           <div>
-            <label className="label_flex">
+            <div className="label_flex">
               <p>1</p> Особисті дані:
-            </label>
+            </div>
             <div>
               <input
                 placeholder="Імя"
@@ -78,10 +78,10 @@ const Form = (props) => {
         </div>
         <div className="hr" />
         <div className="block_center_m">
-          <label htmlFor="self-pickup" className="label_flex">
+          <div htmlFor="self-pickup" className="label_flex">
             <p>2</p>
             Доставка:
-          </label>
+          </div>
           <label className="radio_btn" htmlFor="self-pickup">
             <input
               type="radio"
@@ -125,9 +125,9 @@ const Form = (props) => {
         </div>
         <div className="hr" />
         <div className="block_center_m block_center_pay">
-          <label className="label_flex">
+          <div className="label_flex">
             <p>3</p>Оплата:
-          </label>
+          </div>
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label className="radio_btn">
             <input

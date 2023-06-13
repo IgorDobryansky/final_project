@@ -8,9 +8,7 @@ const OrderHeader = () => (
       <img src={user1} alt="img" />
     </div>
     <div className="text_head">
-      <p className="text_head1">
-        Вже є аккаунт або хочете зареєструватися?
-      </p>
+      <p className="text_head1">Вже є аккаунт або хочете зареєструватися?</p>
       <p className="text_head2">Увійдіть до кабінету та отримайте знижку</p>
     </div>
     <div className="header_btn">

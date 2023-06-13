@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
 import "../../styles/_header.scss";
 
 import mainLogo from "../../assets/images/header/main-logo.png";
@@ -107,6 +106,6 @@ function Header() {
         {isMenuOpen && <div className="overlay" />}
       </div>
     </div>
-  );
-}
+  </div>
+);
 export default Header;

@@ -137,7 +137,7 @@ const Form = (props) => {
             />
             <p className="radio_btn_title">При отриманні</p>
           </label>
-          <label className="radio_btn">
+          <label className="radio_btn" htmlFor="payment">
             <input
               type="radio"
               {...register("payment", { required: true })}

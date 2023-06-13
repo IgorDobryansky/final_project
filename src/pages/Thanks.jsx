@@ -7,7 +7,7 @@ const Thanks = () => (
   <div className="wrapper_thanks">
     <img src={check} alt="img" />
     <p>Дякуємо за замовлення</p>
-    <p>Ми зв'яжемось з Вами найближчим часом</p>
+    <p>Ми звяжемось з Вами найближчим часом</p>
     <Link to="/final_project/home">
       <Button
         style={{

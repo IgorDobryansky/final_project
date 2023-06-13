@@ -1,7 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
 import Form from "../components/form/Form";
-import {Link} from "react-router-dom";
 
 const Order = () => {
   const items = [
@@ -20,21 +20,21 @@ const Order = () => {
       price: 5000
     },
     {
-      id: 1,
+      id: 3,
       image: "../assets/images/order/coffe.png",
       name: "Дистиллятор для получения гидролата 8л",
       quantity: 3,
       price: 0
     },
     {
-      id: 2,
+      id: 4,
       image: "../assets/images/order/coffe.png",
       name: "Product 2",
       quantity: 5,
       price: 0
     },
     {
-      id: 1,
+      id: 5,
       image: "../assets/images/order/coffe.png",
       name: "Product 1",
       quantity: 3,
@@ -53,7 +53,6 @@ const Order = () => {
         <h4 className="order_tittle">Оформити замовлення</h4>
       </div>
       <Form items={items} />
-
     </div>
   );
 };

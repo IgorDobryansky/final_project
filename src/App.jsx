@@ -9,6 +9,7 @@ import Delivery from "./pages/Delivery";
 import Contacts from "./pages/Contacts";
 import Order from "./pages/Order";
 import Basket from "./pages/Basket";
+import Thanks from "./pages/Thanks";
 
 const App = () => (
   <Routes>
@@ -20,6 +21,7 @@ const App = () => (
       <Route path="delivery" element={<Delivery />} />
       <Route path="contacts" element={<Contacts />} />
       <Route path="order" element={<Order />} />
+      <Route path="thanks" element={<Thanks />} />
       <Route path="basket" element={<Basket />} />
     </Route>
   </Routes>

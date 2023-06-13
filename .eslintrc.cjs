@@ -10,22 +10,12 @@ module.exports = {
   settings: { react: { version: "18.2" } },
   plugins: ["prettier"],
   rules: {
-    "arrow-body-style": ["error", "as-needed"],
-    "prefer-arrow-callback": "error",
-    "react/jsx-props-no-spreading": "off",
-     "react/prop-types": "off",
-    "react/function-component-definition": [
-      "error",
-      {
-         // namedComponents: "function-declaration",
-        namedComponents: "arrow-function",
-        unnamedComponents: "arrow-function"
-      }
-    ],
+    "arrow-body-style": "off",
     "no-underscore-dangle": [
       "error",
       { allow: ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }
     ],
+    "prefer-arrow-callback": "off",
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "comma-dangle": ["error", "never"],
     "prettier/prettier": "error"

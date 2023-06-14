@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+
 import "../../styles/_header.scss";
 
 import mainLogo from "../../assets/images/header/main-logo.png";
@@ -9,7 +10,7 @@ import cartLogo from "../../assets/images/header/shopping-cart-logo.png";
 
 import menuBtn from "../../assets/images/header/header-menu-btn.png";
 
-const Header = () => {
+function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -107,6 +108,5 @@ const Header = () => {
       </div>
     </div>
   );
-};
-
+}
 export default Header;

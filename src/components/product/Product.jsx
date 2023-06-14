@@ -1,10 +1,9 @@
 import React from "react";
-
 import { useParams } from "react-router-dom";
 import Card from "../Card";
 
-function Product() {
+const Product = () => {
   const { productId } = useParams();
-  return <Card/>;
-}
+  return <h2>Product {productId}</h2>;
+};
 export default Product;

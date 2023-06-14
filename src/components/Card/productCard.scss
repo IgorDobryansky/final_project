@@ -1,0 +1,257 @@
+.card {
+  padding-top: 32px;
+
+  &__wrapper {
+    display: flex;
+    padding-top: 27px;
+    padding-bottom: 82px;
+    border-bottom: 1px solid rgba(230, 232, 231, 1);
+    margin-bottom: 118px;
+
+  }
+
+  &__image {
+    width: 565px;
+    height: 622px;
+    background-color: grey;
+    margin-right: 30px;
+  }
+
+  &__description {
+    width: 684px;
+    margin-bottom: 37px;
+
+    &_available {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 37px;
+      margin-bottom: 37px;
+      border-bottom: 1px solid #e6e8e7;
+    }
+
+    &-available-item {
+      color: rgba(75, 113, 89, 1);
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 132.4%;
+      padding-left: 7px;
+    }
+
+    &-article {
+      font-family: "Mont";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 132.4%;
+
+      & span {
+        font-family: "Mont";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 132.4%;
+      }
+    }
+  }
+
+  &__content {
+    margin-bottom: 44px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 132.4%;
+  }
+
+  .carusel {
+    width: 89px;
+    height: 622px;
+    background-color: antiquewhite;
+    margin-right: 30px;
+  }
+
+  .icon_vector {
+    width: 13px;
+    height: 11px;
+  }
+
+  &__share {
+    display: flex;
+
+    & span {
+      margin-right: 48px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 132.4%;
+
+      text-transform: uppercase;
+    }
+  }
+
+  &__options {
+    background: rgba(11, 63, 55, 0.15);
+  }
+}
+
+h1 {
+  margin-bottom: 43px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 39px;
+}
+
+h3 {
+  margin-bottom: 15px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 132.4%;
+
+  text-transform: uppercase;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 33px;
+
+  &__title {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 96.4%;
+  }
+
+  &__amount {
+    display: flex;
+    align-items: center;
+  }
+
+  &__now {
+    margin-right: 32px;
+    font-family: "Mont";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 45px;
+    line-height: 96.4%;
+    color: rgba(155, 0, 0, 1);
+  }
+
+  &__old {
+    font-family: "Mont";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 96.4%;
+    color: rgba(3, 20, 18, 1);
+    opacity: 0.3;
+  }
+}
+
+.button {
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 37px;
+    border-bottom: 1px solid rgba(230, 232, 231, 1);
+  }
+
+  &_count {
+    display: flex;
+    border: 1px solid rgba(230, 232, 231, 1);
+    margin-right: 30px;
+    font-family: "Mont";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 132.4%;
+
+    & button {
+      background-color: rgba(246, 244, 245, 0.934);
+      width: 50px;
+      height: 50px;
+      font-family: "Mont";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 132.4%;
+    }
+
+    &-amount {
+      border-left: 1px solid rgba(230, 232, 231, 1);
+      border-right: 1px solid rgba(230, 232, 231, 1);
+      width: 104px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &_buy {
+    width: 446px;
+    height: 50px;
+    background: linear-gradient(92.18deg, #5e3928 20.13%, #e4a16f 92.93%);
+    color: #ffffff;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 96.4%;
+    text-align: center;
+  }
+
+  &_feedback {
+    width: 327px;
+    height: 50px;
+    background: linear-gradient(92.18deg, #5e3928 20.13%, #e4a16f 92.93%);
+    color: #ffffff;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 96.4%;
+    text-align: center;
+  }
+}
+
+.icon_fb {
+  margin: 0 18px;
+}
+
+h5 {
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 105.9%;
+}
+
+h5+p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 132.4%;
+    padding-bottom: 118px;
+    border-bottom: 1px solid rgba(230, 232, 231, 1);
+    margin-bottom: 149px;
+}
+
+h6 {
+  font-family: 'ABeeZee';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 74.9%;
+text-align: center;
+}
+
+

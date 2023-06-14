@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="footer-wrapper">
         <div className="privacy">
           <img src={mainLogo} alt="" />
-          <p>© 2021 “Copper Pro” Всі права захищені</p>
+          <p>© 2023 “Copper Pro” Всі права захищені</p>
           <Link to="/final_project/privacy">Політика конфіденційності</Link>
         </div>
         <div className="navbar">
@@ -29,9 +29,6 @@ const Footer = () => {
             <ul>
               <li>
                 <Link to="/final_project/catalog">Каталог</Link>
-              </li>
-              <li>
-                <Link to="/final_project/news">Новини</Link>
               </li>
               <li>
                 <Link to="/final_project/delivery">Доставка</Link>

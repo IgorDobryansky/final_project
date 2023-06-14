@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 100px;
   .about-us {
     display: flex;
     justify-content: center;
@@ -27,6 +28,108 @@
         gap: 34px 275px;
         grid-template-columns: repeat(3, 327px);
         grid-template-rows: repeat(2, 210px);
+
+        .about-us__container-item {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          font-family: Montserrat;
+          line-height: 19px;
+          letter-spacing: 0em;
+          text-align: left;
+          img {
+            width: 76px;
+          }
+          h2 {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 700;
+          }
+          p {
+            margin-top: 10px;
+
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1399px) {
+  .main {
+    padding-bottom: 0px;
+    .about-us {
+      padding-bottom: 50px;
+      .about-us-wrapper {
+        width: 640px;
+        h1 {
+          margin: 81px 0 40px 0;
+          font-family: Montserrat;
+          font-size: 40px;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
+        .about-us__container {
+          display: grid;
+          gap: 35px 30px;
+          grid-template-columns: repeat(2, 327px);
+          grid-template-rows: repeat(3, 224px);
+
+          // .about-us__container-item {
+          //   display: flex;
+          //   flex-direction: column;
+          //   align-items: flex-start;
+          //   font-family: Montserrat;
+          //   line-height: 19px;
+          //   letter-spacing: 0em;
+          //   text-align: left;
+          // }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .main {
+    .about-us {
+      padding-bottom: 50px;
+      .about-us-wrapper {
+        width: 290px;
+        h1 {
+          margin: 40px 0 40px 0;
+          font-family: Montserrat;
+          font-size: 24px;
+        }
+        .about-us__container {
+          display: grid;
+          gap: 60px 20px;
+          grid-template-columns: repeat(2, 135px);
+          grid-template-rows: repeat(3, 246px);
+
+          .about-us__container-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-family: Montserrat;
+            line-height: 19px;
+            letter-spacing: 0em;
+            text-align: left;
+            img {
+              width: 50px;
+            }
+            h2 {
+              font-size: 16px;
+            }
+            p {
+              font-size: 11px;
+            }
+          }
+        }
       }
     }
   }

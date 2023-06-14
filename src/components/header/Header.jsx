@@ -67,7 +67,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/final_project/cart">
+              <Link to="/final_project/basket">
                 <div>
                   <span>num</span>
                   <img src={cartLogo} alt="" />
@@ -95,7 +95,7 @@ function Header() {
                 <Link to="/final_project/contacts">Контакти</Link>
               </li>
               <li>
-                <Link to="/final_project/cart">Корзина</Link>
+                <Link to="/final_project/basket">Корзина</Link>
               </li>
               <p>
                 « Ми вчимо насолоджуватися кожною хвилиною »

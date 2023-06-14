@@ -26,6 +26,8 @@ function App() {
           </Route>
           <Route path="delivery" element={<Delivery />} />
           <Route path="contacts" element={<Contacts />} />
+          <Route path="basket" element={<Basket />} />
+                    <Route path="order" element={<Order />} />
         </Route>
       </Routes>
       <Footer />

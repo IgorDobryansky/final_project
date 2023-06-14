@@ -156,7 +156,9 @@ const Basket = () => {
                   </span>
                 </div>
               )}
-              <Button title="Оформити замовлення" width="374" />
+              <Link to="/final_project/order">
+                <Button title="Оформити замовлення" width="374" />
+              </Link>
             </div>
           </section>
         </div>

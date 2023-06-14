@@ -9,6 +9,8 @@ import Product from "./components/product/Product";
 import Home from "./pages/Home";
 import Delivery from "./pages/Delivery";
 import Contacts from "./pages/Contacts";
+import Order from "./pages/Order";
+import Basket from "./pages/Basket";
 
 function App() {
   return (
@@ -29,5 +31,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

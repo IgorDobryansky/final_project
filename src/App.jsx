@@ -27,7 +27,8 @@ function App() {
           <Route path="delivery" element={<Delivery />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="basket" element={<Basket />} />
-                    <Route path="order" element={<Order />} />
+          <Route path="thanks" element={<Thanks />} />
+          <Route path="order" element={<Order />} />
         </Route>
       </Routes>
       <Footer />

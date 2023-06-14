@@ -1,6 +1,6 @@
 import React from "react";
-
 import { useForm } from "react-hook-form";
+
 import ScrollOrder from "../scrollOrder/ScrollOrder";
 import OrderHeader from "../orderHeader/OrderHeader";
 import delivery from "../../assets/images/basket/delivery.png";
@@ -170,6 +170,7 @@ const Form = (props) => {
               <img className="img" alt="img" src={delivery} />
               <p>У вас є безкоштовна доставка!</p>
             </div>
+
             <button type="submit" className="btn_together">
               Оформити замовлення
             </button>

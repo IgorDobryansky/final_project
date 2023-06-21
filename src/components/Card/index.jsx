@@ -5,7 +5,7 @@ import vector from "../../assets/images/card/vector.png";
 import twitter from "../../assets/images/card/twitter.svg";
 import facebook from "../../assets/images/card/facebook.svg";
 import instagram from "../../assets/images/card/instagram.svg";
-//import Carousel from "../Carousel";
+// import Carousel from "../Carousel";
 
 export default function Card() {
   return (
@@ -47,11 +47,15 @@ export default function Card() {
             </div>
             <div className="button_wrapper">
               <div className="button_count">
-                <button className="button_count-item">+</button>
+                <button className="button_count-item" type="button">
+                  +
+                </button>
                 <p className="button_count-amount">1</p>
-                <button>-</button>
+                <button type="button">-</button>
               </div>
-              <button className="button_buy">Придбати</button>
+              <button className="button_buy" type="button">
+                Придбати
+              </button>
             </div>
           </div>
           <div className="card__share">
@@ -89,7 +93,9 @@ export default function Card() {
       </div>
       <div className="button_wrapper">
         <h5>Відгуки</h5>
-        <button className="button_feedback">Залишити відгук</button>
+        <button className="button_feedback" type="button">
+          Залишити відгук
+        </button>
       </div>
       <div className="card__options">
         <h6>Вам також буде цікаво…</h6>

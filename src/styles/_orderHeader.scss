@@ -123,12 +123,13 @@
 
 
   .orderFlexLeft_header {
-    width: 330px;
+    width: 290px;
     height: 327px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-right: 0;
+    margin-right: 0;
 
     .orderFlexLeft_header_svg {
       margin-left: 0px;
@@ -144,6 +145,7 @@
         font-weight: 700;
         font-size: 16px;
       }
+
 
       .text_head2 {
         font-weight: 400;

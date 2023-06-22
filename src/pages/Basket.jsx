@@ -13,26 +13,30 @@ const Basket = () => {
       name: "Кава Melitta Bella Crema Bio (750 г), зерно",
       price: +Date.now().toString().slice(-4),
       oldPrice: 1231,
-      image: ""
+      image: "",
+      count: 1
     },
     {
       id: 2,
       name: "Кава Melitta Bella Crema Bio (1000 г), зерно",
       price: +Date.now().toString().slice(-4),
-      image: productImage
+      image: productImage,
+      count: 1
     },
     {
       id: 3,
       name: "Кава Melitta Bella Crema Bio (1250 г), зерно",
       price: +Date.now().toString().slice(-4),
-      image: productImage
+      image: productImage,
+      count: 1
     },
     {
       id: 4,
       name: "Кава Melitta Bella Crema Bio (1500 г), зерно",
       price: +Date.now().toString().slice(-4),
       oldPrice: 1231,
-      image: ""
+      image: "",
+      count: 1
     }
   ]);
 
@@ -46,9 +50,36 @@ const Basket = () => {
     });
   };
 
+  const increaseCount = (id) => {
+    setProductsArray((prev) =>
+      prev.map((product) =>
+        product.id === id ? { ...product, count: product.count + 1 } : product
+      )
+    );
+  };
+
+  const decreaseCount = (id) => {
+    setProductsArray((prev) =>
+      prev.map((product) =>
+        product.id === id
+          ? { ...product, count: Math.max(product.count - 1, 1) }
+          : product
+      )
+    );
+  };
+
   const freeDelivery = true;
   return (
     <div className="basket">
+      <div className="link_nav_basket">
+        <Link to="/final_project/home" className="general_link">
+          Головна
+        </Link>
+        <span> / </span>
+        <Link to="/final_project/basket" className="basket_link">
+          Кошик
+        </Link>
+      </div>
       <h2 className="basket-header">
         Кошик {!productsArray.length && "порожній"}
       </h2>
@@ -73,7 +104,7 @@ const Basket = () => {
                       <button
                         type="button"
                         disabled={isDeleting}
-                        style={{ backgroundColor: "rgb(229, 229, 229)" }}
+                        style={{ backgroundColor: "rgb(255,255,255)" }}
                         className="delete-product"
                         onClick={() => removeProduct(product.id)}
                       >
@@ -96,9 +127,34 @@ const Basket = () => {
                       </div>
                       <div className="product-card__helper">
                         <div className="product-card__count">
-                          <span className="product-card__count-value">
-                            {product.id} шт.
+                          <button
+                            type="button"
+                            className="product-card__count-button"
+                            onClick={() => decreaseCount(product.id)}
+                            disabled={isDeleting}
+                            style={{ backgroundColor: "rgb(255,255,255)" }}
+                          >
+                            -
+                          </button>
+                          <span
+                            className="product-card__count-value"
+                            style={{
+                              border: "1px solid #E6E8E7",
+                              borderRadius: "10%",
+                              padding: "5px"
+                            }}
+                          >
+                            {product.count} шт.
                           </span>
+                          <button
+                            type="button"
+                            className="product-card__count-button"
+                            onClick={() => increaseCount(product.id)}
+                            disabled={isDeleting}
+                            style={{ backgroundColor: "rgb(255,255,255)" }}
+                          >
+                            +
+                          </button>
                         </div>
                         <div className="product-card__price">
                           {product.oldPrice && (
@@ -113,7 +169,7 @@ const Basket = () => {
                               fontWeight: product.oldPrice && 800
                             }}
                           >
-                            {product.price} грн
+                            {product.price * product.count} грн
                           </span>
                         </div>
                       </div>
@@ -127,16 +183,10 @@ const Basket = () => {
           </section>
           <section className="basket-body__info">
             <div className="count">
-              <div className="basket-image-wrapper">
-                <img
-                  src="../assets/images/basket/basket-large.png"
-                  alt="Basket logo"
-                />
-              </div>
               <span className="count-text">Разом</span>
               <span className="count-summ">
                 {productsArray.reduce(
-                  (acc, { price, id }) => acc + price * id,
+                  (acc, { price, count }) => acc + price * count,
                   0
                 )}{" "}
                 грн

@@ -7,6 +7,7 @@ import Catalog from "./pages/Catalog";
 import Home from "./pages/Home";
 import Delivery from "./pages/Delivery";
 import Contacts from "./pages/Contacts";
+import Thanks from "./pages/Thanks";
 import Order from "./pages/Order";
 import Basket from "./pages/Basket";
 import RegisterForm from "./pages/Register";
@@ -26,9 +27,10 @@ const App = () => (
         <Route path="delivery" element={<Delivery />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="basket" element={<Basket />} />
-        <Route path="order" element={<Order />} />
         <Route path="register" element={<RegisterForm />} />
         <Route path="login" element={<LoginForm />} />
+        <Route path="thanks" element={<Thanks />} />
+        <Route path="order" element={<Order />} />
       </Route>
     </Routes>
     <Footer />

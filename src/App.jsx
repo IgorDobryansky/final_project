@@ -11,6 +11,7 @@ import Order from "./pages/Order";
 import Basket from "./pages/Basket";
 import RegisterForm from "./pages/Register";
 import LoginForm from "./pages/Login";
+import Product from "./components/product/Product";
 
 const App = () => (
   <div>

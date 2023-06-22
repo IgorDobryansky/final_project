@@ -10,7 +10,7 @@ import cartLogo from "../../assets/images/header/shopping-cart-logo.png";
 
 import menuBtn from "../../assets/images/header/header-menu-btn.png";
 
-function Header() {
+const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -108,5 +108,5 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 export default Header;

@@ -5,13 +5,13 @@ import vector from "../../assets/images/card/vector.png";
 import twitter from "../../assets/images/card/twitter.svg";
 import facebook from "../../assets/images/card/facebook.svg";
 import instagram from "../../assets/images/card/instagram.svg";
-//import Carousel from "../Carousel";
+// import Carousel from "../Carousel";
 
 export default function Card() {
   return (
     <div className="card">
       <div className="card__wrapper">
-        <div className="carusel">Карусель</div>
+        {/* <div className="carusel">Карусель</div> */}
         <div>
           <img className="card__image" src={product} alt="Product" />
         </div>
@@ -86,10 +86,6 @@ export default function Card() {
           поставлять трохи менше балів. Якщо ж він скаже, що смакує манго, але
           суддя його не відчує — йому поставлять низький бал.
         </p>
-      </div>
-      <div className="button_wrapper">
-        <h5>Відгуки</h5>
-        <button className="button_feedback">Залишити відгук</button>
       </div>
       <div className="card__options">
         <h6>Вам також буде цікаво…</h6>

@@ -47,11 +47,15 @@ export default function Card() {
             </div>
             <div className="button_wrapper">
               <div className="button_count">
-                <button className="button_count-item">+</button>
+                <button className="button_count-item" type="button">
+                  +
+                </button>
                 <p className="button_count-amount">1</p>
-                <button>-</button>
+                <button type="button">-</button>
               </div>
-              <button className="button_buy">Придбати</button>
+              <button className="button_buy" type="button">
+                Придбати
+              </button>
             </div>
           </div>
           <div className="card__share">
@@ -86,6 +90,12 @@ export default function Card() {
           поставлять трохи менше балів. Якщо ж він скаже, що смакує манго, але
           суддя його не відчує — йому поставлять низький бал.
         </p>
+      </div>
+      <div className="button_wrapper">
+        <h5>Відгуки</h5>
+        <button className="button_feedback" type="button">
+          Залишити відгук
+        </button>
       </div>
       <div className="card__options">
         <h6>Вам також буде цікаво…</h6>

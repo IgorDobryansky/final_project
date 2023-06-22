@@ -38,41 +38,40 @@
             cursor: pointer;
         }
     }
-}
-
-.price {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    &__now {
-        color: #031412;
-        font-family: Mont;
-        font-size: 30px;
-        font-weight: 800;
-        line-height: 29px;
-        text-align: right;
-    }
-    &__now.promotion {
-        color: #9B0000;
-    }
-    &__old {
-        font-family: Mont;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 19px;
-        text-align: right;
-        color: #5a5757;
-        position: relative;
-        &:before {
-        content: " ";
-        display: block;
-        width: 115%;
-        border-top: 2px solid #5a5757;
-        height: 11px;
-        position: absolute;
-        bottom: 0;
-        left: -7px;
-        transform: rotate(13deg);
+    &__price {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        &__now {
+            color: #031412;
+            font-family: Mont;
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 29px;
+            text-align: right;
+        }
+        &__now.promotion {
+            color: #9B0000;
+        }
+        &__old {
+            font-family: Mont;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 19px;
+            text-align: right;
+            color: #5a5757;
+            position: relative;
+            &:before {
+            content: " ";
+            display: block;
+            width: 115%;
+            border-top: 2px solid #5a5757;
+            height: 11px;
+            position: absolute;
+            bottom: 0;
+            left: -7px;
+            transform: rotate(13deg);
+            }
         }
     }
 }

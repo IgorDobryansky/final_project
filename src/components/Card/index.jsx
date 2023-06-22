@@ -11,7 +11,7 @@ export default function Card() {
   return (
     <div className="card">
       <div className="card__wrapper">
-        <div className="carusel">Карусель</div>
+        {/* <div className="carusel">Карусель</div> */}
         <div>
           <img className="card__image" src={product} alt="Product" />
         </div>

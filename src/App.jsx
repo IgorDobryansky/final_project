@@ -12,6 +12,8 @@ import Contacts from "./pages/Contacts";
 import Order from "./pages/Order";
 import Basket from "./pages/Basket";
 import Thanks from "./pages/Thanks";
+import RegisterForm from "./pages/Register";
+import LoginForm from "./pages/Login";
 
 const App = () => (
   <div>
@@ -26,6 +28,8 @@ const App = () => (
         <Route path="delivery" element={<Delivery />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="basket" element={<Basket />} />
+        <Route path="register" element={<RegisterForm />} />
+        <Route path="login" element={<LoginForm />} />
         <Route path="thanks" element={<Thanks />} />
         <Route path="order" element={<Order />} />
       </Route>

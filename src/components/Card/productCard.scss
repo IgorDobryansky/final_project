@@ -1,5 +1,7 @@
 .card {
   padding-top: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
 
   &__wrapper {
     display: flex;
@@ -7,7 +9,6 @@
     padding-bottom: 82px;
     border-bottom: 1px solid rgba(230, 232, 231, 1);
     margin-bottom: 118px;
-
   }
 
   &__image {

@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../itemCard/card";
+import Card from "../card/Card";
 
 const Cards = ({products, loading}) =>{
 

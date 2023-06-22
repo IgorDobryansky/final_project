@@ -10,7 +10,8 @@ const Order = () => {
       image: "../assets/images/order/coffe.png",
       name: "Дистиллятор для получения гидролата 8л",
       quantity: 3,
-      price: 10.99
+      price: 10.99,
+      oldPrice: 15.99
     },
     {
       id: 2,
@@ -38,10 +39,10 @@ const Order = () => {
       image: "../assets/images/order/coffe.png",
       name: "Product 1",
       quantity: 3,
-      price: 0,
-      lastPrice: 3.99
+      price: 0
     }
   ];
+
   return (
     <div className="orderWrapper">
       <div className="head">

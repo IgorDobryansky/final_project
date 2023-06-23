@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./_search.scss";
 import img from "../../assets/images/search/search.png";
 
 function Search() {
+  const [value, setValue] = useState();
   return (
     <form className="search__form">
       <input

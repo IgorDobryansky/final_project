@@ -10,7 +10,7 @@ import twitterLogo from "../../assets/images/footer/twitter-logo.png";
 import facebookLogo from "../../assets/images/footer/facebook-logo.png";
 import instagramLogo from "../../assets/images/footer/instagram-logo.png";
 
-function Footer() {
+const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -81,6 +81,6 @@ function Footer() {
       </div>
     </div>
   );
-}
+};
 
 export default Footer;

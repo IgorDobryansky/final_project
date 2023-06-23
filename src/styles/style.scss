@@ -2,10 +2,20 @@
 @import "reset";
 @import "variables";
 @import "mixin";
+@import "basket";
 @import "header";
 @import "footer";
 @import "home";
 @import "productsCarousel";
+@import "basket";
+@import "order";
+@import "form";
+@import "scrollOrder";
+@import "orderHeader";
+@import "thanks";
+@import "login";
+@import "register";
+@import "aboutUs";
 
 body {
   background-color: rgb(255, 255, 255);

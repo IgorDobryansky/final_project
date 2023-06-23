@@ -1,0 +1,359 @@
+form {
+  //max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  .form_left {
+    display: flex;
+    flex-direction: column;
+
+    .block_center_m {
+      padding: 0px 71px 32px 0px;
+
+      span {
+        color: #9B0000;
+      }
+
+      .radio_btn_text {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: #031412;
+        padding: 17px 0 33px 0;
+        width: 398px;
+        height: 38px;
+
+      }
+    }
+
+    .hr {
+      border-bottom: 1px solid #E6E8E7;
+      width: 100%;
+      margin: 35px 0;
+    }
+
+    .input_text {
+      display: flex;
+      align-items: flex-end;
+
+
+      .span_flex {
+        display: flex;
+        flex-direction: column;
+        color: #9B0000;
+
+      }
+
+
+      input {
+        border: 1px solid #A1A1A1;
+        width: 327px;
+        height: 50px;
+        padding: 0 0 0 15px;
+        //padding: 11px 112px 16px 16px;
+        margin-top: 30px;
+        margin-right: 30px;
+        color: #A1A1A1;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+
+      }
+    }
+  }
+
+
+  .label_flex {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    color: #031412;
+    line-height: 96.4%;
+
+    p {
+      padding: 5px 12px;
+      background: linear-gradient(278.32deg, #0B3F37 -7.03%, #CB8D62 136.33%);
+      color: white;
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 30px;
+      margin-right: 22px;
+    }
+  }
+
+
+  .radio_btn {
+    color: #A1A1A1;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    margin-top: 24px;
+
+    &:hover {
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+
+    input:checked + .radio_btn_title {
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    input[type='radio'] {
+      accent-color: #5E3928;
+      margin-right: 10px;
+
+    }
+
+  }
+
+  .form_right {
+    display: flex;
+    flex-direction: column;
+
+    .together {
+      width: 446px;
+      height: 427px;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+
+      .together_container {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 30px;
+
+        .btn_together {
+          width: 382px;
+          height: 50px;
+          background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+          color: #FFFFFF;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        input {
+          width: 256px;
+          height: 50px;
+          border: 1px solid #E6E8E7;
+          font-family: 'Montserrat';
+          font-weight: 400;
+          font-size: 14px;
+          color: #A1A1A1;
+        }
+
+        .btn_promo {
+          background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+          padding: 16px 16px;
+          color: #FFFFFF;
+          font-family: 'Montserrat';
+          font-weight: 700;
+          font-size: 14px;
+        }
+
+        .together_text {
+          font-family: 'Montserrat';
+          font-weight: 400;
+          font-size: 35px;
+          color: #031412;
+          margin-bottom: 20px;
+          margin-top: 31px;
+        }
+
+        .together_price {
+          font-family: 'Mont';
+          font-weight: 800;
+          font-size: 40px;
+          color: #031412;
+          border-bottom: 1px solid #E6E8E7;
+          padding-bottom: 31px;
+        }
+
+        .together_img {
+          display: flex;
+          margin-bottom: 31px;
+          margin-top: 31px;
+
+          p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #A1A1A1;
+            margin-left: 20px;
+
+          }
+        }
+
+      }
+    }
+
+  }
+
+
+}
+
+@media (max-width: 1399px) {
+  form {
+    //width: 1399px;
+    margin: 0 auto;
+    max-width: 1399px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .form_right{
+      align-items: center;
+    }
+
+    .form_left {
+      .input_text {
+        input {
+          width: 318px;
+          height: 50px;
+          padding: 0 0 0 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  form {
+    max-width: 290px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .form_right {
+      max-width: 290px;
+      display: flex;
+      align-items: center;
+
+      .together {
+        height: 427px;
+        width: 290px;
+
+        .together_container {
+          margin: 20px 14px;
+
+          .btn_promo {
+            padding: 16px 4px;
+          }
+
+          .btn_together {
+            width: 250px;
+            height: 50px;
+          }
+
+          input {
+            width: 156px;
+            height: 50px;
+            font-weight: 400;
+            font-size: 14px;
+          }
+
+
+          .together_text {
+            font-weight: 400;
+            font-size: 24px;
+          }
+
+          .together_price {
+            font-weight: 800;
+            font-size: 30px;
+          }
+
+
+        }
+      }
+    }
+
+    .form_left {
+      max-width: 290px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .block_center_m {
+        padding: 0;
+      }
+
+      .block_center_pay {
+        margin-bottom: 30px;
+      }
+
+      .input_text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .span_flex {
+          span {
+            margin-left: 16px;
+          }
+
+
+        }
+
+
+        input {
+          width: 289px;
+          height: 50px;
+          padding: 0 0 0 15px;
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+
+
+      }
+
+      .block_center_m {
+        .radio_btn_text {
+          font-weight: 400;
+          font-size: 14px;
+          width: 289px;
+          height: 57px;
+
+        }
+      }
+    }
+
+
+  }
+
+  .block_center_pay {
+    padding: 0px 139px 35px 0px;
+  }
+
+  .label_flex {
+    justify-content: center;
+
+  }
+}
+
+
+
+
+
+
+

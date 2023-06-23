@@ -2,6 +2,8 @@ import React from "react";
 
 import "../styles/_home.scss";
 
+import ProductsCarousel from "../components/productsCarousel/ProductsCarousel";
+
 import assortementLogo from "../assets/images/home/assortment-logo.png";
 import concernLogo from "../assets/images/home/concern-logo.png";
 import deliveyLogo from "../assets/images/home/delivery-logo.png";
@@ -12,6 +14,7 @@ import paymentLogo from "../assets/images/home/payment-logo.png";
 const Home = () => (
   <div className="container">
     <main className="main">
+      <ProductsCarousel title="Лідери продажу" />
       <div className="about-us">
         <div className="about-us-wrapper">
           <h1>Чому обирають нас</h1>

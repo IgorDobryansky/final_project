@@ -4,6 +4,10 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 100px;
+  .carousel-container {
+    height: 50px;
+    width: 500px;
+  }
   .about-us {
     display: flex;
     justify-content: center;
@@ -25,7 +29,7 @@
       }
       .about-us__container {
         display: grid;
-        gap: 34px 275px;
+        gap: 34px 200px;
         grid-template-columns: repeat(3, 327px);
         grid-template-rows: repeat(2, 210px);
 
@@ -78,16 +82,6 @@
           gap: 35px 30px;
           grid-template-columns: repeat(2, 327px);
           grid-template-rows: repeat(3, 224px);
-
-          // .about-us__container-item {
-          //   display: flex;
-          //   flex-direction: column;
-          //   align-items: flex-start;
-          //   font-family: Montserrat;
-          //   line-height: 19px;
-          //   letter-spacing: 0em;
-          //   text-align: left;
-          // }
         }
       }
     }
@@ -96,6 +90,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .main {
+    padding-bottom: 0px;
     .about-us {
       padding-bottom: 50px;
       .about-us-wrapper {

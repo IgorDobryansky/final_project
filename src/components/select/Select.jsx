@@ -4,7 +4,7 @@ import "./_select.scss";
 function Select() {
   return (
     <div>
-      <label className="select__label" htmlFor='cars'>Сортування:</label>
+      {/* <label className="select__label" htmlFor='cars'>Сортування:</label> */}
       <select name="cars" id='cars'>
         <option value="null">Інше</option>
         <option value="minPrice">Від дешевих</option>

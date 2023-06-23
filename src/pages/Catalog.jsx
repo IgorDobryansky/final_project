@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { Pagination} from "@mui/material";
+import { Pagination } from "@mui/material";
 import Cards from "../components/listCards/Cards";
 import Search from "../components/search/Search";
 import Select from "../components/select/Select";
@@ -129,7 +129,7 @@ const data = [
   }
 ];
 
-function Catalog() {
+const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -161,9 +161,7 @@ function Catalog() {
       <hr className="line" />
       <div className="cards-list__wrapper">
         <Cards products={currentProducts} loading={loading} />
-        <div className="sidebar">
-          
-        </div>
+        <div className="sidebar" />
       </div>
       <Pagination
         count={4}
@@ -174,5 +172,5 @@ function Catalog() {
       <Outlet />
     </div>
   );
-}
+};
 export default Catalog;

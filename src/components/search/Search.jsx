@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./_search.scss";
 import img from "../../assets/images/search/search.png";
 
-function Search() {
+const Search = () => {
   const [setValue] = useState();
   return (
     <form className="search__form">
@@ -12,9 +12,9 @@ function Search() {
         placeholder="Пошук"
         onChange={(event) => setValue(event.target.value)}
       />
-      <img className="search__icon" src={img} alt="search"/>
+      <img className="search__icon" src={img} alt="search" />
     </form>
   );
-}
+};
 
 export default Search;

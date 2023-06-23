@@ -28,46 +28,44 @@ const responsive = {
   }
 };
 
-function ProductsCarousel(props) {
-  return (
-    <div className="carousel">
-      <h1>{props.title}</h1>
-      <Carousel
-        swipeable={false}
-        draggable={false}
-        showDots
-        infinite
-        responsive={responsive}
-        autoPlaySpeed={1000}
-        keyBoardControl
-        customTransition="all .5"
-        transitionDuration={500}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
-      >
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 5</div>
-        <div>Item 6</div>
-        <div>Item 7</div>
-        <div>Item 8</div>
-        <div>Item 9</div>
-        <div>Item 10</div>
-        <div>Item 11</div>
-        <div>Item 12</div>
-        <div>Item 13</div>
-      </Carousel>
+const ProductsCarousel = (props) => (
+  <div className="carousel">
+    <h1>{props.title}</h1>
+    <Carousel
+      swipeable={false}
+      draggable={false}
+      showDots
+      infinite
+      responsive={responsive}
+      autoPlaySpeed={1000}
+      keyBoardControl
+      customTransition="all .5"
+      transitionDuration={500}
+      containerClass="carousel-container"
+      removeArrowOnDeviceType={["tablet", "mobile"]}
+      dotListClass="custom-dot-list-style"
+      itemClass="carousel-item-padding-40-px"
+    >
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+      <div>Item 5</div>
+      <div>Item 6</div>
+      <div>Item 7</div>
+      <div>Item 8</div>
+      <div>Item 9</div>
+      <div>Item 10</div>
+      <div>Item 11</div>
+      <div>Item 12</div>
+      <div>Item 13</div>
+    </Carousel>
 
-      <Button className="catalog__button">
-        <Link to="/final_project/catalog">Перейти в каталог</Link>
-      </Button>
-    </div>
-  );
-}
+    <Button className="catalog__button">
+      <Link to="/final_project/catalog">Перейти в каталог</Link>
+    </Button>
+  </div>
+);
 
 export default ProductsCarousel;
 

@@ -3,7 +3,7 @@ import "./_search.scss";
 import img from "../../assets/images/search/search.png";
 
 function Search() {
-  const [value, setValue] = useState();
+  const [setValue] = useState();
   return (
     <form className="search__form">
       <input
@@ -12,7 +12,7 @@ function Search() {
         placeholder="Пошук"
         onChange={(event) => setValue(event.target.value)}
       />
-      <img className="search__icon" src={img} />
+      <img className="search__icon" src={img} alt="search"/>
     </form>
   );
 }

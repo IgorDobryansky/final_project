@@ -10,13 +10,13 @@ const Order = () => {
       image: "../assets/images/order/coffe.png",
       name: "Дистиллятор для получения гидролата 8л",
       quantity: 3,
-      price: 10.99,
-      oldPrice: 15.99
+      price: 6000,
+      newPrice: 5000
     },
     {
       id: 2,
       image: "../assets/images/order/coffe.png",
-      name: "Product 2",
+      name: "Дистиллятор для получения гидролата 8л",
       quantity: 2,
       price: 5000
     },
@@ -25,21 +25,21 @@ const Order = () => {
       image: "../assets/images/order/coffe.png",
       name: "Дистиллятор для получения гидролата 8л",
       quantity: 3,
-      price: 0
+      price: 5000
     },
     {
       id: 4,
       image: "../assets/images/order/coffe.png",
-      name: "Product 2",
+      name: "Дистиллятор для получения гидролата 8л",
       quantity: 5,
-      price: 0
+      price: 5000
     },
     {
       id: 5,
       image: "../assets/images/order/coffe.png",
-      name: "Product 1",
+      name: "Дистиллятор для получения гидролата 8л",
       quantity: 3,
-      price: 0
+      price: 5000
     }
   ];
 

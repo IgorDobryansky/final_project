@@ -79,7 +79,7 @@ const Form = (props) => {
         </div>
         <div className="hr" />
         <div className="block_center_m">
-          <div htmlFor="self-pickup" className="label_flex">
+          <div htmlFor="delivery" className="label_flex">
             <p>2</p>
             Доставка:
           </div>
@@ -90,7 +90,7 @@ const Form = (props) => {
               value="self-pickup"
               id="self-pickup"
             />
-            <p>Самовивіз</p>
+            <p className="radio_btn_title">Самовивіз</p>
           </label>
           <p className="radio_btn_text">
             Ви можете забрати з нашого офіційного магазину за адресою Бажана

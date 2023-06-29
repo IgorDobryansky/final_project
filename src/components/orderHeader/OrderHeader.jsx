@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
 import user1 from "../../assets/images/order/user1.svg";
 
 const OrderHeader = () => (
@@ -12,12 +13,16 @@ const OrderHeader = () => (
       <p className="text_head2">Увійдіть до кабінету та отримайте знижку</p>
     </div>
     <div className="header_btn">
-      <button className="btn btn_dark" type="submit">
-        Увійти
-      </button>
-      <button className="btn btn_light" type="submit">
-        Реєстрація
-      </button>
+      <Link to="/final_project/login">
+        <button className="btn btn_dark" type="submit">
+          Увійти
+        </button>
+      </Link>
+      <Link to="/final_project/register">
+        <button className="btn btn_light" type="submit">
+          Реєстрація
+        </button>
+      </Link>
     </div>
   </div>
 );

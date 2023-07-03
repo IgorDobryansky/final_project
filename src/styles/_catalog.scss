@@ -1,7 +1,27 @@
+.link_nav_catalog {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 24px 0 24px 260px;
+
+    .catalog_link {
+      font-weight: 800;
+    }
+
+    .general_link:hover {
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -text-fill-color: transparent;
+    }
+  }
+
 .page {
     &__title {
         width: 100%;
-        padding: 30px 0 30px 260px;
+        margin: 0 0 24px 260px;
         text-align: left;
         font-family: Mont;
         font-size: 50px;
@@ -12,9 +32,9 @@
 
 .form {
     display: flex;
-    justify-content: space-between;
+    background-color: #B3B9B8;
     width: 100%;
-    padding: 15px 260px;
+    padding: 15px 160px;
 }
 
 hr.line {
@@ -23,12 +43,6 @@ hr.line {
     margin: 30px 0 30px 150px;
     height: 0px;
     opacity: 10%;
-}
-
-.catalog {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .cards-list {
@@ -49,7 +63,10 @@ hr.line {
 } 
 
 .MuiPagination-root {
-    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+    width: 100%;
     button {
         height: 48px;
         width: 38px;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import Cards from "../components/listCards/Cards";
 import Search from "../components/search/Search";
@@ -153,7 +153,16 @@ const Catalog = () => {
 
   return (
     <div className="catalog">
-      <h2 className="page__title">Каталог2</h2>
+      <div className="link_nav_catalog">
+        <Link to="/final_project/home" className="general_link">
+          Головна
+        </Link>
+        <span> / </span>
+        <Link to="/final_project/catalog" className="catalog_link">
+          Каталог
+        </Link>
+      </div>
+      <h2 className="page__title">Каталог</h2>
       <div className="form">
         <Search />
         <Select />

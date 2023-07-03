@@ -20,7 +20,6 @@
 
 .page {
     &__title {
-        width: 100%;
         margin: 0 0 24px 260px;
         text-align: left;
         font-family: Mont;
@@ -32,15 +31,14 @@
 
 .form {
     display: flex;
-    background-color: #B3B9B8;
-    width: 100%;
-    padding: 15px 160px;
+    justify-content: space-between;
+    margin: 0 320px 35px 260px;
 }
 
 hr.line {
     width: calc(100% - 500px);
-    border: 1px solid #514c4c;
-    margin: 30px 0 30px 150px;
+    border: 1px solid #514c4c80;
+    margin: 40px 0 40px 300px;
     height: 0px;
     opacity: 10%;
 }
@@ -49,10 +47,11 @@ hr.line {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    column-gap: 30px;
+    gap: 30px 30px;
     margin: 0 60px;
     &__wrapper {
        display: flex;
+       justify-content: space-between;
     }
 }
 

@@ -133,7 +133,7 @@ const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(6);
+  const [productsPerPage] = useState(8);
 
   useEffect(() => {
     const getProducts = () => {
@@ -163,11 +163,11 @@ const Catalog = () => {
         </Link>
       </div>
       <h2 className="page__title">Каталог</h2>
+      <hr className="line" />
       <div className="form">
         <Search />
         <Select />
       </div>
-      <hr className="line" />
       <div className="cards-list__wrapper">
         <Cards products={currentProducts} loading={loading} />
         <div className="sidebar" />

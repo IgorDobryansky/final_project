@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    border: 1px solid #0b3e3622;
+    padding: 5px;
+    
     &__sale {
         position: absolute;
         top: 27px;
@@ -18,13 +21,13 @@
         color: #FFFFFF;
     }
     &__image {
-        width: 446px;
-        height: 491px;
+        width: 398px;
+        height: 438px;
         cursor: pointer;
     }
 
     &__description {
-        height: 80px;
+        height: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;

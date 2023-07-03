@@ -153,7 +153,7 @@ const Catalog = () => {
 
   return (
     <div className="catalog">
-      <h2 className="page__title">Каталог</h2>
+      <h2 className="page__title">Каталог2</h2>
       <div className="form">
         <Search />
         <Select />

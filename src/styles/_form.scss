@@ -1,4 +1,5 @@
 form {
+   cursor: default;
   //max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -16,6 +17,7 @@ form {
       }
 
       .radio_btn_text {
+        cursor: default;
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 400;
@@ -90,6 +92,7 @@ form {
 
 
   .radio_btn {
+    cursor: pointer;
     color: #A1A1A1;
     font-family: 'Montserrat';
     font-style: normal;
@@ -116,6 +119,7 @@ form {
     }
 
     input[type='radio'] {
+      cursor: pointer;
       accent-color: #5E3928;
       margin-right: 10px;
 
@@ -317,6 +321,7 @@ form {
 
 
         input {
+
           width: 289px;
           height: 50px;
           padding: 0 0 0 15px;

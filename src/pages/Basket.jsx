@@ -141,7 +141,8 @@ const Basket = () => {
                             style={{
                               border: "1px solid #E6E8E7",
                               borderRadius: "10%",
-                              padding: "5px"
+                              padding: "5px",
+                              margin: "10px"
                             }}
                           >
                             {product.count} шт.

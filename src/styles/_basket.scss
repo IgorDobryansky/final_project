@@ -31,7 +31,7 @@
   max-width: 1400px;
 
   &-header {
-    font-family: "ABeeZee";
+    font-family: 'Montserrat';
     font-weight: 400;
     font-size: 50px;
 
@@ -73,6 +73,12 @@
             padding: 20px 0;
             display: flex;
             border-top: 1px solid #E6E8E7;
+            &__count-button{
+               font-family: "Montserrat";
+              font-size: 26px;
+              font-weight: 400;
+
+            }
 
             .delete-product {
               position: absolute;
@@ -122,6 +128,7 @@
 
             .product-card__helper {
               display: flex;
+              //justify-content: center;
               width: 100%;
               max-width: 392px;
 
@@ -131,7 +138,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: start;
-                font-family: "Mont";
+                font-family: 'Montserrat';
                 font-style: normal;
                 font-weight: 600;
                 font-size: 20px;
@@ -144,7 +151,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: start;
-                font-family: "Mont";
+                font-family: 'Montserrat';
                 font-weight: 600;
                 font-size: 20px;
                 line-height: 132.4%;
@@ -154,7 +161,7 @@
                   position: absolute;
                   left: 0;
                   bottom: calc(50% + 15px);
-                  font-family: "Mont";
+                  font-family: 'Montserrat';
                   font-weight: 600;
                   font-size: 14px;
                   line-height: 96.4%;
@@ -215,7 +222,7 @@
 
         &-summ {
           margin-top: 20px;
-          font-family: "Mont";
+         font-family: 'Montserrat';
           font-weight: 800;
           font-size: 40px;
           color: rgb(3, 20, 18);
@@ -347,7 +354,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: start;
-                font-family: "Mont";
+                font-family: 'Montserrat';
                 font-style: normal;
                 font-weight: 600;
                 font-size: 20px;
@@ -360,7 +367,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: start;
-                font-family: "Mont";
+                font-family: 'Montserrat';
                 font-weight: 600;
                 font-size: 20px;
                 line-height: 132.4%;
@@ -370,7 +377,7 @@
                   position: absolute;
                   left: 0;
                   bottom: calc(50% + 15px);
-                  font-family: "Mont";
+                  font-family: 'Montserrat';
                   font-weight: 600;
                   font-size: 14px;
                   line-height: 96.4%;
@@ -436,7 +443,7 @@
 
           &-summ {
             margin-top: 20px;
-            font-family: "Mont";
+           font-family: 'Montserrat';
             font-weight: 800;
             font-size: 40px;
             color: rgb(3, 20, 18);
@@ -566,7 +573,7 @@
                   display: flex;
                   align-items: center;
                   justify-content: start;
-                  font-family: "Mont";
+                 font-family: 'Montserrat';
                   font-style: normal;
                   font-weight: 600;
                   font-size: 20px;
@@ -579,7 +586,7 @@
                   display: flex;
                   align-items: center;
                   justify-content: start;
-                  font-family: "Mont";
+                  font-family: 'Montserrat';
                   font-weight: 600;
                   font-size: 20px;
                   line-height: 132.4%;
@@ -589,7 +596,7 @@
                     position: absolute;
                     left: 0;
                     bottom: calc(50% + 15px);
-                    font-family: "Mont";
+                    font-family: 'Montserrat';
                     font-weight: 600;
                     font-size: 14px;
                     line-height: 96.4%;
@@ -651,7 +658,7 @@
 
           &-summ {
             margin-top: 20px;
-            font-family: "Mont";
+           font-family: 'Montserrat';
             font-weight: 800;
             font-size: 30px;
             color: rgb(3, 20, 18);

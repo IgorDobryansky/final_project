@@ -1,3 +1,5 @@
+// eslint-disable react/destructuring-assignment
+
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
@@ -53,7 +55,7 @@ function valuetext(value) {
   return `${value} грн`;
 }
 
-const FilterSlider = (props) => {
+const FilterSlider = (name) => {
   const [value, setValue] = useState([15, 37]);
 
   const handleChange = (event, newValue) => {
@@ -74,7 +76,7 @@ const FilterSlider = (props) => {
 
   return (
     <div className="filter__wrapper">
-      <p className="filter__name">{props.name}</p>
+      <p className="filter__name">{name}</p>
       <Box sx={{ width: 200 }}>
         <PriceSlider
           getAriaLabel={() => "Temperature range"}

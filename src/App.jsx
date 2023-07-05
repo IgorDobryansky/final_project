@@ -21,9 +21,9 @@ const App = () => (
       <Route path="/final_project" element={<Outlet />}>
         <Route path="" element={<Home />} />
         <Route path="aboutUs" element={<AboutUs />} />
-        <Route path="catalog/" element={<Catalog />}>
-          <Route path=":productId" element={<Product />} />
-        </Route>
+        <Route path="catalog/" element={<Catalog />} />
+        <Route path=":productId" element={<Product />} />
+        {/* необхідно налаштувати сторінку продукту, щоб шлях був через каталог */}
         <Route path="delivery" element={<Delivery />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="basket" element={<Basket />} />

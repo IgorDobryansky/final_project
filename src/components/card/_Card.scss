@@ -4,7 +4,11 @@
     position: relative;
     border: 1px solid #0b3e3622;
     padding: 5px;
-    
+    height: 410px;
+    width: 320px;
+    &:hover {
+        border: 1px solid #0b3e36;
+    }
     &__sale {
         position: absolute;
         top: 27px;
@@ -21,9 +25,10 @@
         color: #FFFFFF;
     }
     &__image {
-        width: 398px;
-        height: 438px;
+        width: 310px;
+        height: 330px;
         cursor: pointer;
+        margin-bottom: 10px;
     }
 
     &__description {
@@ -33,12 +38,13 @@
         align-items: center;
         h1 {
             font-family: Mont;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 400;
             line-height: 19px;
             letter-spacing: 0em;
             color: #031412;
             cursor: pointer;
+            width:180px;
         }
     }
     &__price {
@@ -48,7 +54,7 @@
         &__now {
             color: #031412;
             font-family: Mont;
-            font-size: 30px;
+            font-size: 22px;
             font-weight: 800;
             line-height: 29px;
             text-align: right;

@@ -4,6 +4,9 @@ import { Pagination } from "@mui/material";
 import Cards from "../components/listCards/Cards";
 import Search from "../components/search/Search";
 import Select from "../components/select/Select";
+import FilterSlider from "../components/filter/FilterSlider";
+import FilterButton from "../components/filter/FilterButton";
+import RadioButtonsFilter from "../components/filter/FilterRadio";
 import "../styles/_catalog.scss";
 
 const data = [
@@ -133,7 +136,7 @@ const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(8);
+  const [productsPerPage] = useState(12);
 
   useEffect(() => {
     const getProducts = () => {
@@ -170,7 +173,12 @@ const Catalog = () => {
       </div>
       <div className="cards-list__wrapper">
         <Cards products={currentProducts} loading={loading} />
-        <div className="sidebar" />
+        <div className="sidebar">
+          <FilterSlider name="Ціна" />
+          <FilterSlider name="Вага" />
+          <FilterButton />
+          <RadioButtonsFilter />
+        </div>
       </div>
       <Pagination
         count={4}

@@ -13,11 +13,11 @@ module.exports = {
     "arrow-body-style": ["error", "as-needed"],
     "prefer-arrow-callback": "error",
     "react/jsx-props-no-spreading": "off",
-     "react/prop-types": "off",
+    "react/prop-types": "off",
     "react/function-component-definition": [
       "error",
       {
-         // namedComponents: "function-declaration",
+        // namedComponents: "function-declaration",
         namedComponents: "arrow-function",
         unnamedComponents: "arrow-function"
       }

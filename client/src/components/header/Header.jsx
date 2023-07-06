@@ -35,39 +35,39 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-wrapper">
-        <Link className="logo" to="/final_project/">
+        <Link className="logo" to="/">
           <img className="logo-element" src={mainLogo} alt="" />
         </Link>
         <div className="nav">
           <ul className="nav-list">
             <li>
-              <Link to="/final_project/catalog">Каталог</Link>
+              <Link to="catalog">Каталог</Link>
             </li>
             <li>
-              <Link to="/final_project/delivery">Доставка</Link>
+              <Link to="delivery">Доставка</Link>
             </li>
             <li>
-              <Link to="/final_project/aboutUs">Про нас</Link>
+              <Link to="aboutUs">Про нас</Link>
             </li>
             <li>
-              <Link to="/final_project/contacts">Контакти</Link>
+              <Link to="contacts">Контакти</Link>
             </li>
           </ul>
         </div>
         <div className="pages">
           <ul className="pages-list">
             <li>
-              <Link to="/final_project/favorite">
+              <Link to="favorite">
                 <img src={heartLogo} alt="" />
               </Link>
             </li>
             <li>
-              <Link to="/final_project/cabinet">
+              <Link to="cabinet">
                 <img src={cabinetLogo} alt="" />
               </Link>
             </li>
             <li>
-              <Link to="/final_project/basket">
+              <Link to="basket">
                 <img src={cartLogo} alt="" />
               </Link>
             </li>
@@ -80,16 +80,16 @@ const Header = () => {
           {isMenuOpen && (
             <ul className="menu-list">
               <li>
-                <Link to="/final_project/catalog">Каталог</Link>
+                <Link to="catalog">Каталог</Link>
               </li>
               <li>
-                <Link to="/final_project/delivery">Доставка</Link>
+                <Link to="delivery">Доставка</Link>
               </li>
               <li>
-                <Link to="/final_project/aboutUs">Про нас</Link>
+                <Link to="aboutUs">Про нас</Link>
               </li>
               <li>
-                <Link to="/final_project/contacts">Контакти</Link>
+                <Link to="contacts">Контакти</Link>
               </li>
               <p>
                 « Ми вчимо насолоджуватися кожною хвилиною »

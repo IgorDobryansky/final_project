@@ -12,7 +12,7 @@ const RegisterForm = () => {
   });
   return (
     <div>
-      <Link to="/final_project/">
+      <Link to="/">
         <button type="submit" className="button-to-main">
           Назад на головну
         </button>
@@ -54,7 +54,7 @@ const RegisterForm = () => {
 
           <div className="footer-form">
             <p className="footer-form__text">Маєш аккаунт?</p>
-            <Link to="/final_project/login">
+            <Link to="/login">
               <p className="footer-form__text">Увійти</p>
             </Link>
           </div>

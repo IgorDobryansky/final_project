@@ -21,23 +21,23 @@ const Footer = () => {
         <div className="privacy">
           <img src={mainLogo} alt="" />
           <p>© 2023 “Copper Pro” Всі права захищені</p>
-          <Link to="/final_project/privacy">Політика конфіденційності</Link>
+          <Link to="privacy">Політика конфіденційності</Link>
         </div>
         <div className="navbar">
           <div className="nav">
             <h1 className="nav__title">Навігація</h1>
             <ul>
               <li>
-                <Link to="/final_project/catalog">Каталог</Link>
+                <Link to="catalog">Каталог</Link>
               </li>
               <li>
-                <Link to="/final_project/delivery">Доставка</Link>
+                <Link to="delivery">Доставка</Link>
               </li>
               <li>
-                <Link to="/final_project/aboutUs">Про нас</Link>
+                <Link to="aboutUs">Про нас</Link>
               </li>
               <li>
-                <Link to="/final_project/contacts">Контакти</Link>
+                <Link to="contacts">Контакти</Link>
               </li>
             </ul>
           </div>

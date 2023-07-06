@@ -72,11 +72,11 @@ const Basket = () => {
   return (
     <div className="basket">
       <div className="link_nav_basket">
-        <Link to="/final_project/home" className="general_link">
+        <Link to="/home" className="general_link">
           Головна
         </Link>
         <span> / </span>
-        <Link to="/final_project/basket" className="basket_link">
+        <Link to="/basket" className="basket_link">
           Кошик
         </Link>
       </div>
@@ -84,7 +84,7 @@ const Basket = () => {
         Кошик {!productsArray.length && "порожній"}
       </h2>
       {!productsArray.length && (
-        <Link to="/final_project/catalog">
+        <Link to="/catalog">
           <Button title="Назад до покупок" width="327" secondary />
         </Link>
       )}
@@ -175,7 +175,7 @@ const Basket = () => {
                       </div>
                     </div>
                   ))}
-                <Link to="/final_project/catalog">
+                <Link to="/catalog">
                   <Button title="Назад до покупок" width="327" secondary />
                 </Link>
               </div>
@@ -206,7 +206,7 @@ const Basket = () => {
                   </span>
                 </div>
               )}
-              <Link to="/final_project/order">
+              <Link to="/order">
                 <Button title="Оформити замовлення" width="374" />
               </Link>
             </div>
@@ -214,7 +214,7 @@ const Basket = () => {
         </div>
       ) : null}
       {!!productsArray.length && (
-        <Link to="/final_project/catalog" className="none-desktop">
+        <Link to="/catalog" className="none-desktop">
           <Button title="Назад до покупок" width="327" secondary />
         </Link>
       )}

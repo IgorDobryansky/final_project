@@ -46,7 +46,7 @@ const Order = () => {
   return (
     <div className="orderWrapper">
       <div className="head">
-        <Link to="/final_project/catalog">
+        <Link to="/catalog">
           <button className="btn_back" type="button">
             Назад до покупок
           </button>

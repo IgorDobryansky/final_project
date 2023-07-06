@@ -10,7 +10,6 @@ import "react-multi-carousel/lib/styles.css";
 import "../../styles/_productsCarousel.scss";
 
 import { Button } from "@mui/material";
-// import { run } from "../../http/db";
 
 import Card from "../card/Card";
 
@@ -38,12 +37,6 @@ const responsive = {
 };
 
 function ProductsCarousel(props) {
-  // useEffect(() => {
-  //   run();
-
-  //   // Выполните операции с базой данных, используя getDB()
-  // }, []);
-
   const products = props.products.map((item) => (
     <Card product={item} key={item.id} />
   ));
@@ -63,7 +56,7 @@ function ProductsCarousel(props) {
       </Carousel>
 
       <Button className="catalog__button">
-        <Link to="/final_project/catalog">Перейти в каталог</Link>
+        <Link to="/catalog">Перейти в каталог</Link>
       </Button>
     </div>
   );

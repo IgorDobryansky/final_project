@@ -1,0 +1,19 @@
+.search {
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        width: 208px;
+        border-bottom: 1px solid #031412;
+        padding: 6px 0;
+    }
+    &__input {
+        width: 180px;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        color: #031412;
+    }
+    &__icon {
+        height: 15px;
+    }
+}

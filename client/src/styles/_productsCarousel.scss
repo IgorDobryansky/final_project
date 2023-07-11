@@ -5,8 +5,6 @@
   align-items: center;
   padding: 80px 0;
   h1 {
-    display: flex;
-    align-items: center;
     font-family: Montserrat;
     font-size: 50px;
     font-weight: 400;
@@ -33,9 +31,7 @@
     }
   }
   .carousel-container {
-    height: 600px;
-    width: 90%;
-
+    margin-top: 46px;
     .react-multiple-carousel__arrow {
       border-radius: 0px;
       background: white;
@@ -47,32 +43,6 @@
       }
       &:hover {
         background: linear-gradient(92.18deg, #e4a16f 50.13%, #5e3928 92.93%);
-      }
-    }
-    .react-multi-carousel-track {
-      .carousel-item {
-        display: flex;
-        justify-content: center;
-        .card {
-          align-items: center;
-          margin: 0;
-          .card__description {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            h1 {
-              margin: 0;
-              font-family: Montserrat;
-              font-size: 20px;
-              font-weight: 400;
-              line-height: 19px;
-              letter-spacing: 0em;
-              text-align: left;
-            }
-          }
-        }
       }
     }
     .react-multi-carousel-dot-list {
@@ -90,70 +60,6 @@
             #5e3928 -24.09%,
             #e4a16f 104.02%
           );
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1399px) {
-  .carousel {
-    .carousel-container {
-      height: 500px;
-    }
-    .catalog__button {
-      width: 327px;
-    }
-    .react-multi-carousel-track {
-      .carousel-item {
-        width: 290px;
-        display: flex;
-        .card {
-          width: 324px;
-          .card__image {
-            width: 324px;
-            height: 389.68px;
-          }
-          .card__description {
-            h1 {
-              width: 168px;
-            }
-            p {
-              width: 128px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .carousel {
-    .carousel-container {
-      height: 470px;
-    }
-    .catalog__button {
-      width: 290px;
-    }
-    .react-multi-carousel-track {
-      .carousel-item {
-        margin: 0;
-        .card {
-          width: 290px;
-          .card__image {
-            width: 290px;
-            height: 360px;
-          }
-          .card__description {
-            width: 290px;
-            h1 {
-              width: 168px;
-            }
-            p {
-              width: 128px;
-            }
-          }
         }
       }
     }

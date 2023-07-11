@@ -8,7 +8,7 @@ const Thanks = () => (
     <img src={check} alt="img" />
     <p>Дякуємо за замовлення</p>
     <p>Ми звяжемось з Вами найближчим часом</p>
-    <Link to="/">
+    <Link to="/final_project">
       <Button
         style={{
           background:

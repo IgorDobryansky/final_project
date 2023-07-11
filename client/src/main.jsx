@@ -5,8 +5,11 @@ import { Provider } from "react-redux";
 
 import "./styles/style.scss";
 
-import store from "./redux/store";
+import { createStore } from "redux";
 import App from "./App";
+import rootReducer from "./redux/rootReducer";
+
+const store = createStore(rootReducer);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>

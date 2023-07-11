@@ -35,40 +35,43 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-wrapper">
-        <Link className="logo" to="/">
+        <Link className="logo" to="/final_project/">
           <img className="logo-element" src={mainLogo} alt="" />
         </Link>
         <div className="nav">
           <ul className="nav-list">
             <li>
-              <Link to="catalog">Каталог</Link>
+              <Link to="/final_project/catalog">Каталог</Link>
             </li>
             <li>
-              <Link to="delivery">Доставка</Link>
+              <Link to="/final_project/delivery">Доставка</Link>
             </li>
             <li>
-              <Link to="aboutUs">Про нас</Link>
+              <Link to="/final_project/aboutUs">Про нас</Link>
             </li>
             <li>
-              <Link to="contacts">Контакти</Link>
+              <Link to="/final_project/contacts">Контакти</Link>
             </li>
           </ul>
         </div>
         <div className="pages">
           <ul className="pages-list">
             <li>
-              <Link to="favorite">
+              <Link to="/final_project/favorite">
                 <img src={heartLogo} alt="" />
               </Link>
             </li>
             <li>
-              <Link to="cabinet">
+              <Link to="/final_project/cabinet">
                 <img src={cabinetLogo} alt="" />
               </Link>
             </li>
             <li>
-              <Link to="basket">
-                <img src={cartLogo} alt="" />
+              <Link to="/final_project/basket">
+                <div>
+                  <span>num</span>
+                  <img src={cartLogo} alt="" />
+                </div>
               </Link>
             </li>
           </ul>
@@ -80,16 +83,19 @@ const Header = () => {
           {isMenuOpen && (
             <ul className="menu-list">
               <li>
-                <Link to="catalog">Каталог</Link>
+                <Link to="/final_project/catalog">Каталог</Link>
               </li>
               <li>
-                <Link to="delivery">Доставка</Link>
+                <Link to="/final_project/delivery">Доставка</Link>
               </li>
               <li>
-                <Link to="aboutUs">Про нас</Link>
+                <Link to="/final_project/aboutUs">Про нас</Link>
               </li>
               <li>
-                <Link to="contacts">Контакти</Link>
+                <Link to="/final_project/contacts">Контакти</Link>
+              </li>
+              <li>
+                <Link to="/final_project/basket">Корзина</Link>
               </li>
               <p>
                 « Ми вчимо насолоджуватися кожною хвилиною »

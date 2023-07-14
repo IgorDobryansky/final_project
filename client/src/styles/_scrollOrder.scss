@@ -1,5 +1,6 @@
 
 .scroll-container {
+
   width: 446px;
   height: 240px;
   overflow-y: scroll;
@@ -10,6 +11,7 @@
     width: 4px;
   }
 
+
   &::-webkit-scrollbar-track {
     background: #B3B9B8;
     border-radius: 50px;
@@ -18,6 +20,7 @@
   &::-webkit-scrollbar-thumb {
     background: linear-gradient(95.42deg, #5E3928 -2.56%, #E4A16F 63.17%);
     border-radius: 50px;
+
   }
 
 
@@ -58,40 +61,53 @@
           font-size: 16px;
           width: 238px;
           height: 63px;
+          margin-right: 71px;
         }
 
         .block_price {
           display: flex;
           justify-content: space-between;
+          align-items: flex-end;
 
           .price_position {
             position: relative;
 
-            .last_price {
-              font-weight: 800;
-              color: #9B0000;
+            .grey-color {
+              color: grey;
+              opacity: 0.30000001192092896;
+              font-size: 14px;
+              font-family: 'Montserrat';
+              font-weight: 400;
 
               &::after {
                 content: "";
                 position: absolute;
                 transform-origin: center center;
                 transform: translate(-50%, -50%) rotate(13deg);
-                left: 50%;
-                bottom: 50%;
-                width: 115%;
+                left: 32%;
+                bottom: 80%;
+                width: 95%;
                 border-bottom: 1px solid rgba(3, 20, 18, 0.3);
               }
+            }
+
+            .newPrice {
+              font-weight: 800;
+              color: #9B0000;
+              font-size: 20px;
+
+
             }
           }
 
           .quantity {
-            font-weight: 600;
+            font-weight: 500;
             font-size: 20px;
           }
 
           .price {
             font-family: 'Montserrat';
-            font-weight: 800;
+            font-weight: 400;
             font-size: 20px;
           }
         }
@@ -117,6 +133,16 @@
 @media (max-width: 1399px) {
   .scroll-container {
     width: 523px;
+    .item{
+      .desktop{
+        .item_content{
+          .name{
+                margin-right: 134px;
+          }
+        }
+      }
+    }
+
 
   }
 }
@@ -142,6 +168,13 @@
 
     .item_content {
       display: none;
+
+
+    }
+
+    .name {
+      font-size: 15px;
+      font-family: Montserrat;
     }
 
     .quantity {
@@ -156,27 +189,43 @@
 
       .price_position {
         position: relative;
-        .last_price {
-          font-weight: 800;
-          color: #9B0000;
-          &::before {
-                content: "";
-                position: absolute;
-                transform-origin: center center;
-                transform: translate(-50%, -50%) rotate(13deg);
-                left: 44%;
-                bottom: 16%;
-                width: 115%;
-                border-bottom: 1px solid rgba(3, 20, 18, 0.3);
-              }
-
-        }
 
         .price {
-          font-weight: 800;
+          font-weight: 500;
+          font-family: Montserrat;
           font-size: 20px;
           margin-right: 10px;
         }
+
+        .grey-color {
+          color: #8c8d8b;
+
+          font-size: 14px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            transform-origin: center center;
+            transform: translate(-50%, -50%) rotate(13deg);
+            left: 32%;
+            bottom: 80%;
+            width: 95%;
+            border-bottom: 1px solid rgba(3, 20, 18, 0.3);
+          }
+
+        }
+
+        .newPrice {
+          font-family: Montserrat;
+          font-weight: 800;
+          font-size: 20px;
+          color: #9B0000;
+          margin-right: 10px;
+
+
+        }
+
+
       }
 
 
@@ -184,6 +233,8 @@
 
     .img_quantity_mobile {
       display: flex;
+      margin-right: 10px;
+      margin-top: 10px;
 
       .order_img {
         margin: 0 10px 10px 0;

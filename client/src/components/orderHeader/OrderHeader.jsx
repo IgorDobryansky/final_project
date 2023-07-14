@@ -13,12 +13,12 @@ const OrderHeader = () => (
       <p className="text_head2">Увійдіть до кабінету та отримайте знижку</p>
     </div>
     <div className="header_btn">
-      <Link to="/login">
+      <Link to="/final_project/login">
         <button className="btn btn_dark" type="submit">
           Увійти
         </button>
       </Link>
-      <Link to="/register">
+      <Link to="/final_project/register">
         <button className="btn btn_light" type="submit">
           Реєстрація
         </button>

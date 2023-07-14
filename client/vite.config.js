@@ -8,7 +8,7 @@ export default defineConfig({
   root: "src/", // change root path from 'project root' to 'project root/src'
   build: {
     // configure build options
-    outDir: "../dist", // change build folder to 'docs
+    outDir: "../build", // change build folder to 'docs
     minify: "esbuild" // minify build with 'esbuild
   },
   server: {

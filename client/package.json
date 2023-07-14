@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run lint & vite build",
-    "lint": "eslint src --ext js,jsx,json --report-unused-disable-directives --max-warnings 0 --fix",
-    "prepare": "husky install"
+    "lint": "eslint src --ext js,jsx,json --report-unused-disable-directives --max-warnings 0 --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",

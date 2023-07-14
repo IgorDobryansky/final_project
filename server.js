@@ -35,8 +35,13 @@ app.use(bodyParser.json());
 const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
+mongoose.set('useCreateIndex', true);
 mongoose
-  .connect(db, { useNewUrlParser: true, useFindAndModify: false })
+  .connect(db, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.log(err));
 
@@ -45,6 +50,14 @@ app.use(passport.initialize());
 
 // Passport Config
 require('./config/passport')(passport);
+
+app.use(function (req, res, next) {
+  res.setHeader('Acces-Control-Allow-Origin', '*');
+  res.setHeader('Acces-Control-Allow-Methods', 'GET');
+  res.setHeader('Acces-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Acces-Control-Allow-Credentials', true);
+  next();
+});
 
 // Use Routes
 app.use('/api/configs', globalConfigs);
@@ -67,7 +80,6 @@ app.use('/api/payment-methods', paymentMethods);
 app.use('/api/partners', partners);
 // app.use('/', mainRoute);
 
-// Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build'));

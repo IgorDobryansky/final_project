@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { useForm } from "react-hook-form";
 
 import ScrollOrder from "../scrollOrder/ScrollOrder";
@@ -6,16 +7,63 @@ import OrderHeader from "../orderHeader/OrderHeader";
 import delivery from "../../assets/images/basket/delivery.png";
 
 const Form = (props) => {
+  const promoData = [
+    {
+      id: 1,
+      title: "PROMO20",
+      sum: 20,
+      count: 10
+    },
+    {
+      id: 2,
+      title: "PROMO30",
+      sum: 30,
+      count: 5
+    }
+  ];
+
   const { items } = props;
+  const [selectedPromo, setSelectedPromo] = useState("");
+
   const {
     register,
     handleSubmit,
+    getValues,
+    watch,
     formState: { errors }
   } = useForm();
+  const usePromo = (e) => {
+    // console.log(getValues().promo);
+    e.preventDefault();
+    const promoCode = getValues().promo;
+    const promoItem = promoData.find((promo) => promo.title === promoCode);
+    // eslint-disable-next-line no-console
+    console.log(promoItem);
+    if (promoItem) {
+      setSelectedPromo(`${promoItem.sum}`);
+    } else if (promoItem === undefined) {
+      setSelectedPromo(undefined);
+    }
+  };
+
+  const watchPromo = watch("promo");
 
   const onSubmit = (data) => {
+    const promoCode = data.selectedPromo;
+    setSelectedPromo(promoCode);
     // eslint-disable-next-line no-console
     console.log(data);
+  };
+
+  const getTotalPrice = () => {
+    const totalPrice = items.reduce(
+      (acc, rec) =>
+        acc + (rec.newPrice ? rec.newPrice : rec.price) * rec.quantity,
+      0
+    );
+    return totalPrice - (totalPrice / 100) * selectedPromo
+      ? totalPrice - (totalPrice / 100) * selectedPromo
+      : totalPrice;
   };
 
   return (
@@ -79,7 +127,7 @@ const Form = (props) => {
         </div>
         <div className="hr" />
         <div className="block_center_m">
-          <div htmlFor="self-pickup" className="label_flex">
+          <div htmlFor="delivery" className="label_flex">
             <p>2</p>
             Доставка:
           </div>
@@ -90,7 +138,7 @@ const Form = (props) => {
               value="self-pickup"
               id="self-pickup"
             />
-            <p>Самовивіз</p>
+            <p className="radio_btn_title">Самовивіз</p>
           </label>
           <p className="radio_btn_text">
             Ви можете забрати з нашого офіційного магазину за адресою Бажана
@@ -159,20 +207,41 @@ const Form = (props) => {
                 placeholder="Введіть промокод"
                 {...register("promo", { required: false })}
               />
-              <button className="btn_promo" type="submit">
+              <button
+                className="btn_promo"
+                type="submit"
+                onClick={usePromo}
+                disabled={!watchPromo || watchPromo.length === 0}
+              >
                 Застосувати
               </button>
+              {selectedPromo === undefined && (
+                <p className="promo_select">Промокод не дійсний</p>
+              )}
+              {selectedPromo && (
+                <p className="promo_select">
+                  - {selectedPromo} % знижки по Вашому промокоду
+                </p>
+              )}
             </div>
-            <p className="together_text">Разом</p>
-            <p className="together_price">
-              {items.reduce((acc, { price, id }) => acc + price * id, 0)} грн
-            </p>
+            {promoData.length > 0 ? (
+              <div>
+                <p className="together_text">Разом</p>
+                <p className="together_price"> {getTotalPrice()} грн</p>
+              </div>
+            ) : (
+              <>
+                <p className="together_text">Разом</p>
+                <p className="together_price"> {getTotalPrice()} грн</p>
+              </>
+            )}
+
             <div className="together_img">
               <img className="img" alt="img" src={delivery} />
               <p>У вас є безкоштовна доставка!</p>
             </div>
 
-            <button type="submit" className="btn_together" onSubmit={onSubmit}>
+            <button type="submit" className="btn_together">
               Оформити замовлення
             </button>
           </div>

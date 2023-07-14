@@ -11,12 +11,14 @@ const Scroll = ({ items }) => (
               <h3 className="name">{item.name}</h3>
             </div>
             <div className="name_price_mobile">
-              <p className="quantity_mobile">{item.quantity}шт.</p>
+              <p className="quantity_mobile">{item.quantity} шт.</p>
               <div className="price_position">
-                {item.oldPrice && (
-                  <p className="last_price">{item.oldPrice}грн</p>
+                <p className={`price ${item.newPrice ? "grey-color" : ""}`}>
+                  {item.price} грн
+                </p>
+                {item.newPrice && (
+                  <p className="newPrice">{item.newPrice} грн</p>
                 )}
-                <p className="price">{item.price}грн</p>
               </div>
             </div>
           </div>
@@ -25,11 +27,13 @@ const Scroll = ({ items }) => (
             <div className="item_content">
               <h3 className="name">{item.name}</h3>
               <div className="block_price">
-                <p className="quantity">{item.quantity}шт.</p>
+                <p className="quantity">{item.quantity} шт.</p>
                 <div className="price_position">
-                  <p className="price">{item.price}грн</p>
-                  {item.oldPrice && (
-                    <p className="last_price">{item.oldPrice}грн</p>
+                  <p className={`price ${item.newPrice ? "grey-color" : ""}`}>
+                    {item.price} грн
+                  </p>
+                  {item.newPrice && (
+                    <p className="newPrice">{item.newPrice} грн</p>
                   )}
                 </div>
               </div>

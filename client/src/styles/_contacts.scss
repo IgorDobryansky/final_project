@@ -1,0 +1,134 @@
+.contacts_container {
+
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .wrapper_container {
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    .link_nav_contacts {
+      margin-top: 40px;
+
+      .contacts_link {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-size: 18px;
+        margin-bottom: 24px;
+        margin-top: 24px;
+        font-weight: bold;
+      }
+      span{
+          font-family: 'Montserrat';
+        font-style: normal;
+        font-size: 18px;
+        margin-bottom: 24px;
+        margin-top: 24px;
+      }
+
+      .general_link {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-size: 18px;
+        margin-bottom: 24px;
+        margin-top: 24px;
+
+        &:hover {
+          background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+      }
+    }
+
+
+    h4 {
+      margin-top: 60px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 60px;
+      text-align: center;
+
+    }
+
+
+    p {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .contacts_text {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 76.4%;
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    .contacts_phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 30px;
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    .contacts_email {
+
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      //background-clip: text;
+      //text-fill-color: transparent;
+    }
+  }
+}
+@media (max-width: 1399px){
+  .contacts_container {
+    max-width: 666px;
+  }
+
+}
+@media (max-width: 767px){
+   .contacts_container{
+     max-width: 290px;
+     .wrapper_container{
+       h4{
+         font-weight: 400;
+      font-size: 40px;
+       }
+         .contacts_text {
+      font-weight: 600;
+      font-size: 20px;
+
+    }
+        .contacts_phone {
+       font-weight: 600;
+      font-size: 20px;
+     }
+     }
+
+   }
+
+}

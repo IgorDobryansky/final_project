@@ -1,17 +1,15 @@
-// import axios from "axios";
+import axios from "axios";
 
-// const api = axios.create({
-//   mode: "no-cors",
-//   baseURL: "https://final-project-be.vercel.app/api"
-// });
+const api = axios.create({
+  mode: "no-cors",
+  baseURL: "https://final-project-be.vercel.app/api"
+});
 
-// api.interceptors.request.use((config) => {
-//   // eslint-disable-next-line no-console
-//   console.log(config);
-//   const newConfig = config;
-//   newConfig.headers.authorization =
-//     JSON.parse(localStorage.getItem("token")) || "null";
-//   return newConfig;
-// });
+api.interceptors.request.use((config) => {
+  const newConfig = config;
+  newConfig.headers.authorization =
+    JSON.parse(localStorage.getItem("token")) || "null";
+  return newConfig;
+});
 
-// export default api;
+export default api;

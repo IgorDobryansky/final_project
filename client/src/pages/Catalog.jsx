@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import Cards from "../components/listCards/Cards";
 import Search from "../components/search/Search";
 import Select from "../components/select/Select";
+import FilterSlider from "../components/filter/FilterSlider";
+import FilterButton from "../components/filter/FilterButton";
+import RadioButtonsFilter from "../components/filter/FilterRadio";
 import "../styles/_catalog.scss";
 
 const data = [
@@ -133,7 +136,7 @@ const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(6);
+  const [productsPerPage] = useState(12);
 
   useEffect(() => {
     const getProducts = () => {
@@ -153,15 +156,29 @@ const Catalog = () => {
 
   return (
     <div className="catalog">
+      <div className="link_nav_catalog">
+        <Link to="/final_project/home" className="general_link">
+          Головна
+        </Link>
+        <span> / </span>
+        <Link to="/final_project/catalog" className="catalog_link">
+          Каталог
+        </Link>
+      </div>
       <h2 className="page__title">Каталог</h2>
+      <hr className="line" />
       <div className="form">
         <Search />
         <Select />
       </div>
-      <hr className="line" />
       <div className="cards-list__wrapper">
         <Cards products={currentProducts} loading={loading} />
-        <div className="sidebar" />
+        <div className="sidebar">
+          <FilterSlider name="Ціна" />
+          <FilterSlider name="Вага" />
+          <FilterButton />
+          <RadioButtonsFilter />
+        </div>
       </div>
       <Pagination
         count={4}

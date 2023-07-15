@@ -157,11 +157,11 @@ const Catalog = () => {
   return (
     <div className="catalog">
       <div className="link_nav_catalog">
-        <Link to="/final_project/home" className="general_link">
+        <Link to="/home" className="general_link">
           Головна
         </Link>
         <span> / </span>
-        <Link to="/final_project/catalog" className="catalog_link">
+        <Link to="/catalog" className="catalog_link">
           Каталог
         </Link>
       </div>

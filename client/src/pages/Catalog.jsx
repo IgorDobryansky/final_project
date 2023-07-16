@@ -174,8 +174,8 @@ const Catalog = () => {
       <div className="cards-list__wrapper">
         <Cards products={currentProducts} loading={loading} />
         <div className="sidebar">
-          <FilterSlider name="Ціна" />
-          <FilterSlider name="Вага" />
+          <FilterSlider filterName="Ціна" />
+          <FilterSlider filterName="Вага" />
           <FilterButton />
           <RadioButtonsFilter />
         </div>

@@ -28,7 +28,6 @@ const FilterButton = () => (
     <div className="filter__wrapper-roasting">
       <p className="filter__name">Ступінь обсмажування</p>
       <Stack
-        Stack
         spacing={{ xs: 1, sm: 2 }}
         direction="row"
         useFlexGap

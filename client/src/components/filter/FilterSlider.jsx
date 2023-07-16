@@ -1,4 +1,5 @@
 // eslint-disable react/destructuring-assignment
+// eslint-disable-next-line prettier/prettier
 
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
@@ -55,7 +56,7 @@ function valuetext(value) {
   return `${value} грн`;
 }
 
-const FilterSlider = (name) => {
+const FilterSlider = ({filterName}) => {
   const [value, setValue] = useState([15, 37]);
 
   const handleChange = (event, newValue) => {
@@ -76,7 +77,7 @@ const FilterSlider = (name) => {
 
   return (
     <div className="filter__wrapper">
-      <p className="filter__name">{name}</p>
+      <p className="filter__name">{filterName}</p>
       <Box sx={{ width: 200 }}>
         <PriceSlider
           getAriaLabel={() => "Temperature range"}

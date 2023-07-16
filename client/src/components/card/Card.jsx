@@ -5,11 +5,11 @@ import "./_Card.scss";
 const Card = ({ product }) => (
   <div className="card">
     {product.priceOld ? <div className="card__sale">SALE</div> : null}
-    <Link to="/final_project/:productId" className="product_link">
+    <Link to="catalog/:productId" className="product_link">
       <img className="card__image" src={product.img} alt="Product" />
     </Link>
     <div className="card__description">
-      <Link to="/final_project/:productId" className="product_link">
+      <Link to="catalog/:productId" className="product_link">
         <h1>{product.name}</h1>
       </Link>
       <div className="card__price">

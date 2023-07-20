@@ -5,24 +5,26 @@ on:
     branches:
       - main
 
-env: # environment variables (available in any part of the action)
+env:
   NODE_VERSION: 16
+  ESLINT_DIR: client
 
-jobs: # list of things to do
+jobs:
   linting:
-    name: Linting # job name (unique id)
-    runs-on: ubuntu-latest # on which machine to run
-    steps: # list of steps
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Code Checkout
-        uses: actions/checkout@v3
+      - name: Install Dependencies for Client
+        working-directory: ${{ env.ESLINT_DIR }}
+        run: npm install
 
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Code Linting
-        run: npm run lint --prefix client
+      - name: Code Linting for Client
+        working-directory: ${{ env.ESLINT_DIR }}
+        run: npm run lint

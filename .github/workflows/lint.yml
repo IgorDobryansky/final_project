@@ -13,18 +13,12 @@ jobs:
     name: Linting
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
-
-      - name: Code Checkout
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies for Client
-        working-directory: client
-        run: npm ci
-
-      - name: Code Linting for Client
-        working-directory: client
-        run: npm run lint
+      - name: Install Dependencies
+        run: npm install
+      - name: Code Linting
+        run: npm run lint --prefix client

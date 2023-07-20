@@ -52,10 +52,10 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 app.use(function (req, res, next) {
-  res.setHeader('Acces-Control-Allow-Origin', '*');
-  res.setHeader('Acces-Control-Allow-Methods', 'GET');
-  res.setHeader('Acces-Control-Allow-Headers', 'X-Requested-With,content-type');
-  res.setHeader('Acces-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Authorization, Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
 

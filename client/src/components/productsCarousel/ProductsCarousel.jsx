@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/function-component-definition */
 import React from "react";
@@ -10,6 +11,7 @@ import "react-multi-carousel/lib/styles.css";
 import "../../styles/_productsCarousel.scss";
 
 import { Button } from "@mui/material";
+import api from "../../http/api";
 
 import Card from "../card/Card";
 
@@ -36,16 +38,23 @@ const responsive = {
   }
 };
 
-function ProductsCarousel(props) {
-  // useEffect(() => {
-  //   fetch("http://localhost:4000/api/", {
-  //     method: "GET"
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data))
-  //     .catch((error) => console.error(error));
-  // }, []);
+async function getProducts() {
+  try {
+    const response = await api.get("/customers/customer");
 
+    if (response.status === 200) {
+      const customer = response.data;
+      console.log("Данные о пользователе:", customer);
+    } else {
+      console.log("Произошла ошибка при получении данных о пользователе.");
+    }
+  } catch (error) {
+    console.error("Ошибка при получении данных о пользователе:", error);
+  }
+}
+
+function ProductsCarousel(props) {
+  getProducts();
   const products = props.products.map((item) => (
     <Card product={item} key={item.id} />
   ));

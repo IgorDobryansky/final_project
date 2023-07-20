@@ -7,6 +7,7 @@ on:
 
 env:
   NODE_VERSION: 16
+  ESLINT_DIR: client  # Устанавливаем значение ESLINT_DIR на 'client'
 
 jobs:
   linting:
@@ -21,9 +22,9 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install Dependencies for Client
-        working-directory: ../../client
+        working-directory: ${{ env.ESLINT_DIR }}  # Используем переменную среды для указания директории
         run: npm install
 
       - name: Code Linting for Client
-        working-directory: ../../client
+        working-directory: ${{ env.ESLINT_DIR }}  # Используем переменную среды для указания директории
         run: npm run lint

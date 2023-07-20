@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
+/* eslint-disable react/function-component-definition */
 /* eslint-disable react/destructuring-assignment */
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
@@ -10,62 +12,65 @@ import "../../styles/_productsCarousel.scss";
 
 import { Button } from "@mui/material";
 
+import Card from "../card/Card";
+
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1400 },
+    breakpoint: { max: 3000, min: 1620 },
     items: 3,
-    slidesToSlide: 3
+    slidesToSlide: 1
+  },
+  desktopMedium: {
+    breakpoint: { max: 1620, min: 1400 },
+    items: 2,
+    slidesToSlide: 1
   },
   tablet: {
     breakpoint: { max: 1400, min: 768 },
     items: 2,
-    slidesToSlide: 2
+    slidesToSlide: 1
   },
   mobile: {
-    breakpoint: { max: 768, min: 320 },
+    breakpoint: { max: 768, min: 0 },
     items: 1,
     slidesToSlide: 1
   }
 };
 
-const ProductsCarousel = (props) => (
-  <div className="carousel">
-    <h1>{props.title}</h1>
-    <Carousel
-      swipeable={false}
-      draggable={false}
-      showDots
-      infinite
-      responsive={responsive}
-      autoPlaySpeed={1000}
-      keyBoardControl
-      customTransition="all .5"
-      transitionDuration={500}
-      containerClass="carousel-container"
-      removeArrowOnDeviceType={["tablet", "mobile"]}
-      dotListClass="custom-dot-list-style"
-      itemClass="carousel-item-padding-40-px"
-    >
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
-      <div>Item 5</div>
-      <div>Item 6</div>
-      <div>Item 7</div>
-      <div>Item 8</div>
-      <div>Item 9</div>
-      <div>Item 10</div>
-      <div>Item 11</div>
-      <div>Item 12</div>
-      <div>Item 13</div>
-    </Carousel>
+function ProductsCarousel(props) {
+  useEffect(() => {
+    fetch("http://localhost:4000/api/", {
+      method: "GET"
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+  }, []);
 
-    <Button className="catalog__button">
-      <Link to="/final_project/catalog">Перейти в каталог</Link>
-    </Button>
-  </div>
-);
+  const products = props.products.map((item) => (
+    <Card product={item} key={item.id} />
+  ));
+  return (
+    <div className="carousel">
+      <h1>{props.title}</h1>
+      <Carousel
+        showDots
+        infinite
+        responsive={responsive}
+        containerClass="carousel-container"
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item"
+        ssr
+      >
+        {products}
+      </Carousel>
+
+      <Button className="catalog__button">
+        <Link to="/catalog">Перейти в каталог</Link>
+      </Button>
+    </div>
+  );
+}
 
 export default ProductsCarousel;
 

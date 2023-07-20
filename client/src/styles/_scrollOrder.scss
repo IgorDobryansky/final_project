@@ -41,6 +41,39 @@
 
   .name_price_mobile {
     display: none;
+    //position: absolute;
+    .current-price{
+               font-family: 'Montserrat';
+              font-weight: 800;
+            }
+
+    .old_price {
+      //position: absolute;
+      left: 0;
+      bottom: calc(50% + 15px);
+      //font-family: 'Montserrat';
+      //font-weight: 600;
+      //font-size: 14px;
+      //line-height: 96.4%;
+      color: rgba(3, 20, 18, 0.3);
+
+      span {
+        position: relative;
+        //top: 30px;
+
+
+        &::after {
+          content: "";
+          position: absolute;
+          transform-origin: center center;
+          transform: translate(-50%, -50%) rotate(13deg);
+          left: 50%;
+          bottom: 50%;
+          width: 115%;
+          border-bottom: 1px solid rgba(3, 20, 18, 0.3);
+        }
+      }
+    }
   }
 
   .item {
@@ -71,6 +104,38 @@
 
           .price_position {
             position: relative;
+            .current-price{
+               font-family: 'Montserrat';
+              font-weight: 800;
+            }
+
+            .old_price {
+              //position: absolute;
+              left: 0;
+              bottom: calc(50% + 15px);
+              font-family: 'Montserrat';
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 96.4%;
+              color: rgba(3, 20, 18, 0.3);
+
+              span {
+                position: relative;
+                //top: 30px;
+
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  transform-origin: center center;
+                  transform: translate(-50%, -50%) rotate(13deg);
+                  left: 50%;
+                  bottom: 50%;
+                  width: 115%;
+                  border-bottom: 1px solid rgba(3, 20, 18, 0.3);
+                }
+              }
+            }
 
             .grey-color {
               color: grey;
@@ -133,11 +198,12 @@
 @media (max-width: 1399px) {
   .scroll-container {
     width: 523px;
-    .item{
-      .desktop{
-        .item_content{
-          .name{
-                margin-right: 134px;
+
+    .item {
+      .desktop {
+        .item_content {
+          .name {
+            margin-right: 134px;
           }
         }
       }
@@ -162,6 +228,8 @@
 
       .mobile {
         border-bottom: 1px solid #E6E8E7;
+        margin-right: 8px;
+
       }
 
     }

@@ -2,11 +2,13 @@ import React, { useState } from "react";
 
 import { useForm } from "react-hook-form";
 
+import { useSelector } from "react-redux";
 import ScrollOrder from "../scrollOrder/ScrollOrder";
 import OrderHeader from "../orderHeader/OrderHeader";
 import delivery from "../../assets/images/basket/delivery.png";
 
-const Form = (props) => {
+const Form = () => {
+  const productsArray = useSelector((state) => state.basket.productsArray);
   const promoData = [
     {
       id: 1,
@@ -22,7 +24,6 @@ const Form = (props) => {
     }
   ];
 
-  const { items } = props;
   const [selectedPromo, setSelectedPromo] = useState("");
 
   const {
@@ -56,9 +57,8 @@ const Form = (props) => {
   };
 
   const getTotalPrice = () => {
-    const totalPrice = items.reduce(
-      (acc, rec) =>
-        acc + (rec.newPrice ? rec.newPrice : rec.price) * rec.quantity,
+    const totalPrice = productsArray.reduce(
+      (acc, { price, count }) => acc + price * count,
       0
     );
     return totalPrice - (totalPrice / 100) * selectedPromo
@@ -199,7 +199,7 @@ const Form = (props) => {
         </div>
       </div>
       <div className="form_right">
-        <ScrollOrder items={items} />
+        <ScrollOrder />
         <div className="together">
           <div className="together_container">
             <div>

@@ -17,7 +17,7 @@ export default api;
 // example
 
 // async function getProducts() {
-//   try {
+//   try
 //     const response = await api.get("/customers/customer");
 
 //     if (response.status === 200) {

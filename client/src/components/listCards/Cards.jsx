@@ -9,7 +9,7 @@ const Cards = ({ products, loading }) => {
   return (
     <div className="cards-list">
       {products.map((item) => (
-        <Card product={item} />
+        <Card product={item} key={item.id} />
       ))}
     </div>
   );

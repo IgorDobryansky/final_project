@@ -25,10 +25,6 @@ jobs:
         working-directory: client
         run: npm ci
 
-      - name: Install ESLint for Client
-        working-directory: client
-        run: npm install eslint --save-dev
-
       - name: Code Linting for Client
         working-directory: client
-        run: npx eslint src --ext .js,.jsx,.json --report-unused-disable-directives --max-warnings 0 --fix
+        run: npm run lint

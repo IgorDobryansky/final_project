@@ -19,6 +19,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install Dependencies
-        run: npm install
+        run: cd ../../client && npm install
       - name: Code Linting
         run: cd ../../client && npm run lint

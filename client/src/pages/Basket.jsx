@@ -172,7 +172,7 @@ const Basket = () => {
         </div>
       ) : null}
       {!!productsArray.length && (
-        <Link to="/final_project/catalog" className="none-desktop">
+        <Link to="/catalog" className="none-desktop">
           <Button title="Назад до покупок" width="327" secondary />
         </Link>
       )}

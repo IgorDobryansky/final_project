@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import Cards from "../components/listCards/Cards";
@@ -137,7 +137,6 @@ const data = [
 
 const Catalog = () => {
   // пагінація початок
-
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -160,28 +159,12 @@ const Catalog = () => {
   const currentProducts = products.slice(firstProductIndex, lastProductsIndex);
   // пагінація кінець
 
-  // відкриваюча фільтрація в адаптиві початок
+  // адаптив сайд-бару(фільтрів)
   const [isFilterOpen, setFilterOpen] = useState(false);
-  // const FilterRef = useRef(null);
 
   const toggleFilter = () => {
     setFilterOpen(!isFilterOpen);
   };
-
-  // const handleOutsideClick = (event) => {
-  //   if (FilterRef.current && !FilterRef.current.contains(event.target)) {
-  //     setFilterOpen(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener("click", handleOutsideClick);
-
-  //   return () => {
-  //     document.removeEventListener("click", handleOutsideClick);
-  //   };
-  // }, []);
-  // відкриваюча фільтрація в адаптиві кінець
 
   const { width } = useViewport();
   const breakpoint = 1399;
@@ -203,7 +186,7 @@ const Catalog = () => {
         <Search />
         <Select />
         <button onClick={toggleFilter} type="button" className="filter_btn">
-          <img src={filterBtn} alt="" />
+          <img src={filterBtn} alt="" /> 
         </button>
       </div>
       <div className="cards-list__wrapper">

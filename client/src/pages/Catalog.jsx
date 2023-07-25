@@ -7,7 +7,10 @@ import Select from "../components/select/Select";
 import FilterSlider from "../components/filter/FilterSlider";
 import FilterButton from "../components/filter/FilterButton";
 import RadioButtonsFilter from "../components/filter/FilterRadio";
+import useViewport from "../custom_hooks/viewport";
+import filterBtn from "../assets/images/filter-button/filter.png";
 import "../styles/_catalog.scss";
+
 
 const data = [
   {
@@ -133,6 +136,7 @@ const data = [
 ];
 
 const Catalog = () => {
+  // пагінація початок
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -153,6 +157,17 @@ const Catalog = () => {
   const lastProductsIndex = currentPage * productsPerPage;
   const firstProductIndex = lastProductsIndex - productsPerPage;
   const currentProducts = products.slice(firstProductIndex, lastProductsIndex);
+  // пагінація кінець
+
+  // адаптив сайд-бару(фільтрів)
+  const [isFilterOpen, setFilterOpen] = useState(false);
+
+  const toggleFilter = () => {
+    setFilterOpen(!isFilterOpen);
+  };
+
+  const { width } = useViewport();
+  const breakpoint = 1399;
 
   return (
     <div className="catalog">
@@ -170,15 +185,18 @@ const Catalog = () => {
       <div className="form">
         <Search />
         <Select />
+        <button onClick={toggleFilter} type="button" className="filter_btn">
+          <img src={filterBtn} alt="" /> 
+        </button>
       </div>
       <div className="cards-list__wrapper">
         <Cards products={currentProducts} loading={loading} />
-        <div className="sidebar">
+        {((width > breakpoint) || isFilterOpen) && (<div className="sidebar">
           <FilterSlider filterName="Ціна" />
           <FilterSlider filterName="Вага" />
           <FilterButton />
           <RadioButtonsFilter />
-        </div>
+        </div>)}
       </div>
       <Pagination
         count={4}
@@ -191,3 +209,5 @@ const Catalog = () => {
   );
 };
 export default Catalog;
+
+

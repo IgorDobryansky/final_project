@@ -5,27 +5,33 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from "../components/ui/button/Button";
 import brokenImage from "../assets/images/broken-image.png";
 import deleteIcon from "../assets/images/basket/delete-product.png";
-import { removeProduct, increaseCount, decreaseCount } from "../redux/actions";
+import {
+  removeProduct,
+  increaseCount,
+  decreaseCount
+  // addProduct
+} from "../redux/basket/actions";
 
 const Basket = () => {
   const productsArray = useSelector((state) => state.basket.productsArray);
-  // const productsArray = useSelector((state) => state.productsArray);
   const isDeleting = useSelector((state) => state.isDeleting);
+  // const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
-  const handleRemoveProduct = (id) => {
-    dispatch(removeProduct(id));
+  const handleRemoveProduct = (itemNo) => {
+    dispatch(removeProduct(itemNo));
   };
 
-  const handleIncreaseCount = (id) => {
-    dispatch(increaseCount(id));
+  const handleIncreaseCount = (itemNo) => {
+    dispatch(increaseCount(itemNo));
   };
 
-  const handleDecreaseCount = (id) => {
-    dispatch(decreaseCount(id));
+  const handleDecreaseCount = (itemNo) => {
+    dispatch(decreaseCount(itemNo));
   };
 
   const freeDelivery = true;
+
   return (
     <div className="basket">
       <div className="link_nav_basket">
@@ -41,7 +47,7 @@ const Basket = () => {
         Кошик {!productsArray.length && "порожній"}
       </h2>
       {!productsArray.length && (
-        <Link to="/final_project/catalog">
+        <Link to="/catalog">
           <Button title="Назад до покупок" width="327" secondary />
         </Link>
       )}
@@ -56,14 +62,17 @@ const Basket = () => {
               </div>
               <div className="product-cards">
                 {!!productsArray.length &&
+                // {!!products.length &&
                   productsArray.map((product) => (
-                    <div className="product-card" key={product.id}>
+                  //  {products.map((product, index) => (
+                    <div className="product-card" key={product.itemNo}>
+                    {/*<div className="product-card" key={index}>*/}
                       <button
                         type="button"
                         disabled={isDeleting}
                         style={{ backgroundColor: "rgb(255,255,255)" }}
                         className="delete-product"
-                        onClick={() => handleRemoveProduct(product.id)}
+                        onClick={() => handleRemoveProduct(product.itemNo)}
                       >
                         <div className="delete-product__image-wrapper">
                           <img src={deleteIcon} alt="" />
@@ -73,7 +82,11 @@ const Basket = () => {
                         <div className="product-card__image">
                           <div className="product-card__image-wrapper">
                             <img
-                              src={product.image ? product.image : brokenImage}
+                              src={
+                                product.imageUrls && product.imageUrls.length
+                                  ? product.imageUrls[0]
+                                  : brokenImage
+                              }
                               alt="Product"
                             />
                           </div>
@@ -87,8 +100,8 @@ const Basket = () => {
                           <button
                             type="button"
                             className="product-card__count-button"
-                            onClick={() => handleDecreaseCount(product.id)}
-                            disabled={isDeleting}
+                            onClick={() => handleDecreaseCount(product.itemNo)}
+                            // disabled={isDeleting}
                             style={{ backgroundColor: "rgb(255,255,255)" }}
                           >
                             -
@@ -102,32 +115,39 @@ const Basket = () => {
                               margin: "10px"
                             }}
                           >
-                            {product.count} шт.
+                            {product.quantity} шт.
+                            {/* {product.quantity} шт. */}
                           </span>
                           <button
                             type="button"
                             className="product-card__count-button"
-                            onClick={() => handleIncreaseCount(product.id)}
-                            disabled={isDeleting}
+                            onClick={() => handleIncreaseCount(product.itemNo)}
+                            // disabled={isDeleting}
                             style={{ backgroundColor: "rgb(255,255,255)" }}
                           >
                             +
                           </button>
                         </div>
                         <div className="product-card__price">
-                          {product.oldPrice && (
+                          {product.previousPrice && (
                             <div className="old-price">
-                              <span>{product.oldPrice} грн</span>
+                              <span>
+                                {product.previousPrice} грн
+                              </span>
                             </div>
                           )}
                           <span
                             className="current-price"
                             style={{
-                              color: product.oldPrice && "#9B0000",
-                              fontWeight: product.oldPrice && 800
+                              color: product.previousPrice && "#9B0000",
+                              fontWeight: product.previousPrice && 800
                             }}
                           >
-                            {product.price * product.count} грн
+                            {(
+                              parseFloat(product.currentPrice) *
+                              parseFloat(product.quantity)
+                            ).toFixed(2)}{" "}
+                            грн
                           </span>
                         </div>
                       </div>
@@ -144,7 +164,8 @@ const Basket = () => {
               <span className="count-text">Разом</span>
               <span className="count-summ">
                 {productsArray.reduce(
-                  (acc, { price, count }) => acc + price * count,
+                  (acc, { currentPrice, quantity }) =>
+                 acc + currentPrice * quantity,
                   0
                 )}{" "}
                 грн

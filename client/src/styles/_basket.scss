@@ -309,7 +309,7 @@
 
               .delete-product {
                 position: absolute;
-                top: 50%;
+                top: 30px;
                 right: 10px;
                 transform: translate(-10px, -50%);
                 cursor: pointer;
@@ -640,7 +640,8 @@
 
           .basket-image-wrapper {
             position: absolute;
-            right: 0;
+            //right: 0;
+            top: 10px;
             bottom: 31px;
             z-index: 0;
 

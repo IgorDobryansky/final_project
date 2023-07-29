@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import brokenImage from "../../assets/images/broken-image.png";
 
 const Scroll = () => {
   const productsArray = useSelector((state) => state.basket.productsArray);
@@ -8,60 +9,74 @@ const Scroll = () => {
     <div className="scroll-container">
       <div className="scroll-content">
         {productsArray.map((product) => (
-          <div key={product.id} className="item">
+          <div key={product.itemNo} className="item">
             <div className="mobile">
               <div className="img_quantity_mobile">
                 <img
-                  src={product.image}
+                  src={
+                    product.imageUrls && product.imageUrls.length
+                      ? product.imageUrls[0]
+                      : brokenImage
+                  }
                   alt={product.name}
                   className="order_img"
                 />
                 <h3 className="name">{product.name}</h3>
               </div>
               <div className="name_price_mobile">
-                <p className="quantity_mobile">{product.count} шт.</p>
+                <p className="quantity_mobile">
+                  {product.quantity.$numberInt} шт.
+                </p>
                 <div className="product-card_price">
-                  {product.oldPrice && (
+                  {product.previousPrice && (
                     <div className="old_price">
-                      <span>{product.oldPrice} грн</span>
+                      <span>{product.previousPrice.$numberInt} грн</span>
                     </div>
                   )}
                   <span
                     className="current-price"
                     style={{
-                      color: product.oldPrice && "#9B0000",
-                      fontWeight: product.oldPrice && 800
+                      color: product.previousPrice && "#9B0000",
+                      fontWeight: product.previousPrice && 800
                     }}
                   >
-                    {product.price * product.count} грн
+                    {parseFloat(product.currentPrice.$numberDouble) *
+                      parseFloat(product.quantity.$numberInt)}{" "}
+                    грн
                   </span>
                 </div>
               </div>
             </div>
             <div className="desktop">
               <img
-                src={product.image}
+                src={
+                  product.imageUrls && product.imageUrls.length
+                    ? product.imageUrls[0]
+                    : brokenImage
+                }
                 alt={product.name}
                 className="order_img"
               />
               <div className="item_content">
                 <h3 className="name">{product.name}</h3>
                 <div className="block_price">
-                  <p className="quantity">{product.count} шт.</p>
+                  <p className="quantity">{product.quantity.$numberInt} шт.</p>
                   <div className="price_position">
-                    {product.oldPrice && (
+                    {product.previousPrice && (
                       <div className="old_price">
-                        <span>{product.oldPrice} грн</span>
+                        <span>{product.previousPrice.$numberInt} грн</span>
                       </div>
                     )}
                     <span
                       className="current-price"
                       style={{
-                        color: product.oldPrice && "#9B0000",
-                        fontWeight: product.oldPrice && 800
+                        color: product.previousPrice && "#9B0000",
+                        fontWeight: product.previousPrice && 800
                       }}
                     >
-                      {product.price * product.count} грн
+                      {parseFloat(product.currentPrice.$numberDouble) *
+                        parseFloat(product.quantity.$numberInt)}{" "}
+                      грн
                     </span>
                   </div>
                 </div>

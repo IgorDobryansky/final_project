@@ -2,13 +2,15 @@ import React, { useState } from "react";
 
 import { useForm } from "react-hook-form";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ScrollOrder from "../scrollOrder/ScrollOrder";
 import OrderHeader from "../orderHeader/OrderHeader";
 import delivery from "../../assets/images/basket/delivery.png";
+import { clear } from "../../redux/basket/actions";
 
 const Form = () => {
   const productsArray = useSelector((state) => state.basket.productsArray);
+  const dispatch = useDispatch();
   const promoData = [
     {
       id: 1,
@@ -38,8 +40,8 @@ const Form = () => {
     e.preventDefault();
     const promoCode = getValues().promo;
     const promoItem = promoData.find((promo) => promo.title === promoCode);
-    // eslint-disable-next-line no-console
-    console.log(promoItem);
+
+    // console.log(promoItem);
     if (promoItem) {
       setSelectedPromo(`${promoItem.sum}`);
     } else if (promoItem === undefined) {
@@ -52,18 +54,22 @@ const Form = () => {
   const onSubmit = (data) => {
     const promoCode = data.selectedPromo;
     setSelectedPromo(promoCode);
+    dispatch(clear());
     // eslint-disable-next-line no-console
     console.log(data);
   };
 
   const getTotalPrice = () => {
     const totalPrice = productsArray.reduce(
-      (acc, { price, count }) => acc + price * count,
+      (acc, { currentPrice, quantity }) =>
+        acc + currentPrice.$numberDouble * quantity.$numberInt,
       0
     );
-    return totalPrice - (totalPrice / 100) * selectedPromo
-      ? totalPrice - (totalPrice / 100) * selectedPromo
-      : totalPrice;
+    return (
+      totalPrice - (totalPrice / 100) * selectedPromo
+        ? totalPrice - (totalPrice / 100) * selectedPromo
+        : totalPrice
+    ).toFixed(2);
   };
 
   return (

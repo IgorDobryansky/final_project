@@ -3,7 +3,7 @@ import {
   ADD_PRODUCT,
   INCREASE_COUNT,
   DECREASE_COUNT,
-  CLEAR,
+  CLEAR
   // SET_PRODUCTS
 } from "./actions";
 // import productImage from "../../assets/images/basket/product-image.png";
@@ -57,47 +57,10 @@ import {
 // };
 const initState = {
   productsArray: []
-}
+};
 
-// const initialState = {
-//   productsArray: [
-//     {
-//       id: 1,
-//       name: "Кава Melitta Bella Crema Bio (750 г), зерно",
-//       price: +Date.now().toString().slice(-4),
-//       oldPrice: 1231,
-//       image: productImage,
-//       count: 1
-//     },
-//     {
-//       id: 2,
-//       name: "Кава Melitta Bella Crema Bio (1000 г), зерно",
-//       price: +Date.now().toString().slice(-4),
-//       image: productImage,
-//       count: 1
-//     },
-//     {
-//       id: 3,
-//       name: "Кава Melitta Bella Crema Bio (1250 г), зерно",
-//       price: +Date.now().toString().slice(-4),
-//       image: productImage,
-//       count: 1
-//     },
-//     {
-//       id: 4,
-//       name: "Кава Melitta Bella Crema Bio (1500 г), зерно",
-//       price: +Date.now().toString().slice(-4),
-//       oldPrice: 1231,
-//       image: productImage,
-//       count: 1
-//     }
-//   ],
-//   isDeleting: false
-// };
-
-// eslint-disable-next-line default-param-last
 // const basketReducer = (state = [], action) => {
-const basketReducer = (state = initState, action) => {
+const basketReducer = ( state = initState, action = {}) => {
   switch (action.type) {
     // case SET_PRODUCTS:
     //   return action.payload;
@@ -110,10 +73,10 @@ const basketReducer = (state = initState, action) => {
           (product) => product.itemNo !== action.payload
         )
       };
-      case ADD_PRODUCT:
+    case ADD_PRODUCT:
       return {
         ...state,
-        productsArray: [...state.productsArray, action.payload],
+        productsArray: [...state.productsArray, action.payload]
       };
     case INCREASE_COUNT:
       return {
@@ -121,9 +84,9 @@ const basketReducer = (state = initState, action) => {
         productsArray: state.productsArray.map((product) =>
           product.itemNo === action.payload
             ? {
-              ...product,
-              quantity: parseFloat(product.quantity) + 1
-            }
+                ...product,
+                quantity: parseFloat(product.quantity) + 1
+              }
             : product
         )
       };
@@ -133,12 +96,9 @@ const basketReducer = (state = initState, action) => {
         productsArray: state.productsArray.map((product) =>
           product.itemNo === action.payload
             ? {
-              ...product,
-              quantity: Math.max(
-                  parseFloat(product.quantity) - 1,
-                  1
-                )
-            }
+                ...product,
+                quantity: Math.max(parseFloat(product.quantity) - 1, 1)
+              }
             : product
         )
       };

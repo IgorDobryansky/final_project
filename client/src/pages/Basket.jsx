@@ -62,11 +62,11 @@ const Basket = () => {
               </div>
               <div className="product-cards">
                 {!!productsArray.length &&
-                // {!!products.length &&
+                  // {!!products.length &&
                   productsArray.map((product) => (
-                  //  {products.map((product, index) => (
+                    //  {products.map((product, index) => (
                     <div className="product-card" key={product.itemNo}>
-                    {/*<div className="product-card" key={index}>*/}
+                      {/* <div className="product-card" key={index}> */}
                       <button
                         type="button"
                         disabled={isDeleting}
@@ -131,9 +131,7 @@ const Basket = () => {
                         <div className="product-card__price">
                           {product.previousPrice && (
                             <div className="old-price">
-                              <span>
-                                {product.previousPrice} грн
-                              </span>
+                              <span>{product.previousPrice} грн</span>
                             </div>
                           )}
                           <span
@@ -165,7 +163,7 @@ const Basket = () => {
               <span className="count-summ">
                 {productsArray.reduce(
                   (acc, { currentPrice, quantity }) =>
-                 acc + currentPrice * quantity,
+                    acc + currentPrice * quantity,
                   0
                 )}{" "}
                 грн

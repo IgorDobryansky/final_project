@@ -56,7 +56,7 @@ function valuetext(value) {
   return `${value} грн`;
 }
 
-const FilterSlider = ({filterName}) => {
+const FilterSlider = ({ filterName }) => {
   const [value, setValue] = useState([15, 37]);
 
   const handleChange = (event, newValue) => {

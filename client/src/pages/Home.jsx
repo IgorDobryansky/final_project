@@ -1,5 +1,6 @@
 /* eslint-disable react/function-component-definition */
-import { React, useState } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import "../styles/_home.scss";
 
@@ -12,39 +13,27 @@ import eleganceLogo from "../assets/images/home/elegance-logo.png";
 import garantineLogo from "../assets/images/home/garantine-logo.png";
 import paymentLogo from "../assets/images/home/payment-logo.png";
 
-import api from "../http/api";
+import {
+  fetchTopProducts,
+  fetchNewProducts,
+  fetchFeaturedProducts,
+  fetchSaleProducts
+} from "../http/products";
 
 function Home() {
-  const [topProducts, setTopProducts] = useState([]);
-  const [newProducts, setNewProducts] = useState([]);
-  const [featuredProducts, setFeaturedProducts] = useState([]);
-  const [saleProducts, setSaleProducts] = useState([]);
+  const dispatch = useDispatch();
 
-  async function getProducts() {
-    try {
-      const response = await api.get("/products");
-      if (response.status === 200) {
-        const products = response.data;
-        // console.log(...products);
+  useEffect(() => {
+    dispatch(fetchTopProducts());
+    dispatch(fetchNewProducts());
+    dispatch(fetchFeaturedProducts());
+    dispatch(fetchSaleProducts());
+  }, [dispatch]);
 
-        const randomIndexes = [];
-        while (randomIndexes.length < 9) {
-          const randomIndex = Math.floor(Math.random() * products.length);
-          if (!randomIndexes.includes(randomIndex)) {
-            randomIndexes.push(randomIndex);
-          }
-        }
-        randomIndexes.forEach((item, index) => {
-          console.log(item);
-        });
-      } else {
-        console.log("Произошла ошибка при получении данных о продуктах.");
-      }
-    } catch (error) {
-      console.error("Ошибка при получении данных о продактах:", error);
-    }
-  }
-  getProducts();
+  const topProducts = useSelector((state) => state.products.topProducts);
+  const newProducts = useSelector((state) => state.products.topProducts);
+  const featuredProducts = useSelector((state) => state.products.topProducts);
+  const saleProducts = useSelector((state) => state.products.topProducts);
 
   return (
     <div className="container">

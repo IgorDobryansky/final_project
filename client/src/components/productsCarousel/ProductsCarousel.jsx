@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/function-component-definition */
@@ -39,7 +40,7 @@ const responsive = {
 
 function ProductsCarousel(props) {
   const products = props.products.map((item) => (
-    <Card product={item} key={item.id} />
+    <Card product={item} key={item._id} />
   ));
   return (
     <div className="carousel">

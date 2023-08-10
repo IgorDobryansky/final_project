@@ -1,5 +1,5 @@
-import { REMOVE_PRODUCT, INCREASE_COUNT, DECREASE_COUNT } from "./actions";
-import productImage from "../assets/images/basket/product-image.png";
+import types from "../types";
+import productImage from "../../assets/images/basket/product-image.png";
 
 const initialState = {
   productsArray: [
@@ -40,7 +40,7 @@ const initialState = {
 // eslint-disable-next-line default-param-last
 const basketReducer = (state = initialState, action) => {
   switch (action.type) {
-    case REMOVE_PRODUCT:
+    case types.REMOVE_PRODUCT:
       return {
         ...state,
         isDeleting: true,
@@ -48,7 +48,7 @@ const basketReducer = (state = initialState, action) => {
           (product) => product.id !== action.payload
         )
       };
-    case INCREASE_COUNT:
+    case types.INCREASE_COUNT:
       return {
         ...state,
         productsArray: state.productsArray.map((product) =>
@@ -57,7 +57,7 @@ const basketReducer = (state = initialState, action) => {
             : product
         )
       };
-    case DECREASE_COUNT:
+    case types.DECREASE_COUNT:
       return {
         ...state,
         productsArray: state.productsArray.map((product) =>

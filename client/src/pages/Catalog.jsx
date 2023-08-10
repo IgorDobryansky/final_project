@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { Pagination } from "@mui/material";
 
+import { useDispatch, useSelector } from "react-redux";
 import Cards from "../components/listCards/Cards";
 import Search from "../components/search/Search";
 import Select from "../components/select/Select";
@@ -10,7 +11,6 @@ import FilterButton from "../components/filter/FilterButton";
 import RadioButtonsFilter from "../components/filter/FilterRadio";
 import useViewport from "../custom_hooks/viewport";
 
-import { useDispatch, useSelector } from "react-redux";
 import { getProductsArray } from "../redux/actions/merchandise";
 
 import filterBtn from "../assets/images/filter-button/filter.png";
@@ -20,11 +20,10 @@ const Catalog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const products = useSelector((state) => state.merchandise);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(getProductsArray(currentPage));
-  },[dispatch, currentPage]);
-
+  }, [dispatch, currentPage]);
 
   // адаптив сайд-бару(фільтрів)
   const [isFilterOpen, setFilterOpen] = useState(false);
@@ -53,18 +52,24 @@ const Catalog = () => {
         <Search />
         <Select page={currentPage} />
         <button onClick={toggleFilter} type="button" className="filter_btn">
-          <img src={filterBtn} alt="" /> 
+          <img src={filterBtn} alt="" />
         </button>
       </div>
       <div className="cards-list__wrapper">
-        {products.products.length ? ( <Cards products={products.products} />) : <h2>loading...</h2>}
-        
-        {((width > breakpoint) || isFilterOpen) && (<div className="sidebar">
-          <FilterSlider filterName="Ціна" />
-          <FilterSlider filterName="Вага" />
-          <FilterButton />
-          <RadioButtonsFilter />
-        </div>)}
+        {products.products.length ? (
+          <Cards products={products.products} />
+        ) : (
+          <h2>loading...</h2>
+        )}
+
+        {(width > breakpoint || isFilterOpen) && (
+          <div className="sidebar">
+            <FilterSlider filterName="Ціна" />
+            <FilterSlider filterName="Вага" />
+            <FilterButton />
+            <RadioButtonsFilter />
+          </div>
+        )}
       </div>
       <Pagination
         count={2}
@@ -77,5 +82,3 @@ const Catalog = () => {
   );
 };
 export default Catalog;
-
-

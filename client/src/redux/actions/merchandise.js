@@ -25,9 +25,7 @@ export const getProductsArray = (page) => async (dispatch) => {
 export const SortingProductsArray = (page, sort) => async (dispatch) => {
   try {
     const data = await api
-      .get(
-        `/products/?perPage=12&startPage=${page}&sort=${sort}currentPrice`
-      )
+      .get(`/products/?perPage=12&startPage=${page}&sort=${sort}currentPrice`)
       .then((products) => products);
     console.log(data.data);
     dispatch(getAllProducts(data.data));

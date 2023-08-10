@@ -2,9 +2,7 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./_Card.scss";
 
-
 const Card = ({ product }) => (
-
   <div className="card">
     {product.previousPrice ? <div className="card__sale">SALE</div> : null}
     <Link to="catalog/:productId" className="product_link">
@@ -20,7 +18,9 @@ const Card = ({ product }) => (
         )}
         <p
           className={
-            product.previousPrice ? "card__price__now promotion" : "card__price__now"
+            product.previousPrice
+              ? "card__price__now promotion"
+              : "card__price__now"
           }
         >
           {product.currentPrice} грн

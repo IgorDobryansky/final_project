@@ -7,7 +7,6 @@ import store from "./redux/store";
 import "./styles/style.scss";
 import App from "./App";
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
     <Provider store={store}>

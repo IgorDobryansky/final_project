@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { SortingProductsArray } from "../../redux/actions/merchandise";
 import "./_select.scss";
 
-
 const Select = (page) => {
   const [sort, setSort] = useState(null);
   const dispatch = useDispatch();
@@ -13,11 +12,10 @@ const Select = (page) => {
   const handleChange = (event) => {
     setSort(event.target.value);
   };
-  
+
   useEffect(() => {
     dispatch(SortingProductsArray(page, sort));
-    console.log(page, sort)
-  },[dispatch, sort]);
+  }, [dispatch, sort]);
 
   return (
     <div>
@@ -30,7 +28,7 @@ const Select = (page) => {
         <option value="-">Від дорогих</option>
       </select>
     </div>
-  )
+  );
 };
 
 export default Select;

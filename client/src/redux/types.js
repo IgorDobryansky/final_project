@@ -1,3 +1,5 @@
-const types = {};
+export const types = {};
 
-export default types;
+export const merchandiseTypes = {
+  GET_ALL_PRODUCTS: "GET_ALL_PRODUCTS"
+};

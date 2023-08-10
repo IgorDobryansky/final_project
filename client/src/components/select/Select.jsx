@@ -1,19 +1,36 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { SortingProductsArray } from "../../redux/actions/merchandise";
 import "./_select.scss";
 
-const Select = () => (
-  <div>
-    <label className="select__label" htmlFor="sort">
-      Сортування:
-    </label>
-    <select name="sort" id="sort">
-      <option value="null">Інше</option>
-      <option value="minPrice">Від дешевих</option>
-      <option value="maxPrice">Від дорогих</option>
-    </select>
-  </div>
-);
+
+const Select = (page) => {
+  const [sort, setSort] = useState(null);
+  const dispatch = useDispatch();
+
+  const handleChange = (event) => {
+    setSort(event.target.value);
+  };
+  
+  useEffect(() => {
+    dispatch(SortingProductsArray(page, sort));
+    console.log(page, sort)
+  },[dispatch, sort]);
+
+  return (
+    <div>
+      <label className="select__label" htmlFor="sort">
+        Сортування:
+      </label>
+      <select name="sort" id="sort" onChange={handleChange}>
+        <option value="null">Інше</option>
+        <option value="+">Від дешевих</option>
+        <option value="-">Від дорогих</option>
+      </select>
+    </div>
+  )
+};
 
 export default Select;

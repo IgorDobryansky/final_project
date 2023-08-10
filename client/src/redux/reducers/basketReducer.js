@@ -8,7 +8,7 @@ const initialState = {
       name: "Кава Melitta Bella Crema Bio (750 г), зерно",
       price: +Date.now().toString().slice(-4),
       oldPrice: 1231,
-      image: "",
+      image: productImage,
       count: 1
     },
     {
@@ -30,7 +30,7 @@ const initialState = {
       name: "Кава Melitta Bella Crema Bio (1500 г), зерно",
       price: +Date.now().toString().slice(-4),
       oldPrice: 1231,
-      image: "",
+      image: productImage,
       count: 1
     }
   ],

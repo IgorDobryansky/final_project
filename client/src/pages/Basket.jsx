@@ -29,11 +29,11 @@ const Basket = () => {
   return (
     <div className="basket">
       <div className="link_nav_basket">
-        <Link to="/final_project/home" className="general_link">
+        <Link to="/home" className="general_link">
           Головна
         </Link>
         <span> / </span>
-        <Link to="/final_project/basket" className="basket_link">
+        <Link to="/basket" className="basket_link">
           Кошик
         </Link>
       </div>

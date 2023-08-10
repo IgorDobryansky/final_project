@@ -13,11 +13,11 @@ const AboutUs = () => (
       <div className="about_header">
         <div>
           <div className="link_nav_about">
-            <Link to="/final_project/home" className="general_link">
+            <Link to="/home" className="general_link">
               Головна
             </Link>
             <span> / </span>
-            <Link to="/final_project/aboutUs" className="basket_link">
+            <Link to="/aboutUs" className="basket_link">
               Про нас
             </Link>
           </div>

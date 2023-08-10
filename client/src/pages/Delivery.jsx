@@ -5,11 +5,11 @@ const Delivery = () => (
   <div className="delivery_container">
     <div className="delivery_wrapper">
       <div className="link_nav_delivery">
-        <Link to="/final_project/" className="general_link">
+        <Link to="/home" className="general_link">
           Головна
         </Link>
         <span> / </span>
-        <Link to="/final_project/delivery" className="delivery_link">
+        <Link to="/delivery" className="delivery_link">
           Доставка
         </Link>
       </div>

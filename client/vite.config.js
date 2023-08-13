@@ -13,6 +13,7 @@ export default defineConfig({
   },
   server: {
     // configure dev server
+    host: 'localhost',
     open: true, // open on start
     port: 3000 // port
   },

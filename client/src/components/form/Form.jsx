@@ -2,15 +2,14 @@ import React, { useState } from "react";
 
 import { useForm } from "react-hook-form";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ScrollOrder from "../scrollOrder/ScrollOrder";
 import OrderHeader from "../orderHeader/OrderHeader";
 import delivery from "../../assets/images/basket/delivery.png";
-import { clear } from "../../redux/basket/actions";
 
 const Form = () => {
   const productsArray = useSelector((state) => state.basket.productsArray);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const promoData = [
     {
       id: 1,
@@ -27,6 +26,7 @@ const Form = () => {
   ];
 
   const [selectedPromo, setSelectedPromo] = useState("");
+  const [orderNo, setOrderNo] = useState();
 
   const {
     register,
@@ -51,25 +51,86 @@ const Form = () => {
 
   const watchPromo = watch("promo");
 
-  const onSubmit = (data) => {
-    const promoCode = data.selectedPromo;
-    setSelectedPromo(promoCode);
-    dispatch(clear());
-    // eslint-disable-next-line no-console
-    console.log(data);
-  };
-
   const getTotalPrice = () => {
+    if (!productsArray || productsArray.length === 0) {
+      return 0;
+    }
     const totalPrice = productsArray.reduce(
-      (acc, { currentPrice, quantity }) =>
-        acc + currentPrice.$numberDouble * quantity.$numberInt,
+      (acc, { product, cartQuantity }) =>
+        acc + product.currentPrice * cartQuantity,
       0
     );
-    return (
-      totalPrice - (totalPrice / 100) * selectedPromo
-        ? totalPrice - (totalPrice / 100) * selectedPromo
-        : totalPrice
-    ).toFixed(2);
+    if (selectedPromo) {
+      return (totalPrice - (totalPrice / 100) * selectedPromo).toFixed(2);
+    }
+    return totalPrice.toFixed(2);
+  };
+
+  const onSubmit = (data) => {
+    if (!productsArray || productsArray.length === 0) {
+      // eslint-disable-next-line no-console
+      console.error("The list of products is required, but absent!");
+      return;
+    }
+    const formData = {
+      name: data.name,
+      lastname: data.lastname,
+      mobile: data.mobile,
+      email: data.email,
+      country: data.country,
+      city: data.city,
+      delivery: data.delivery,
+      payment: data.payment,
+      promo: data.promo,
+      orderNo: data.orderNo,
+      letterSubject: "Thank you for order! You are welcome!",
+      letterHtml: `<h1>Your order is placed. Your order was successful!. You are welcome!</h1><p>{Other details about order in your HTML}</p>`
+    };
+
+    const orderData = {
+      ...formData,
+
+      products: productsArray
+
+      // products: productsArray.map((product) => ({
+      //   canceled: false,
+      //   _id: product.product._id,
+      //   product: {
+      //     name: product.product.name,
+      //     price: product.product.currentPrice,
+      //     quantity: product.product.quantity,
+      //   },
+      //   cartQuantity: product.cartQuantity,
+      // })),
+    };
+
+    // dispatch(clear());
+    // console.log(orderData);
+    // console.log(orderData.cartQuantity);
+
+    fetch("http://localhost:4000/api/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(orderData)
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((dataFetch) => {
+        setOrderNo(dataFetch.order.orderNo);
+        // console.log(orderNo);
+        // console.log(dataFetch);
+        // console.log(dataFetch.order.orderNo);
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -100,9 +161,9 @@ const Form = () => {
             <div className="span_flex">
               <input
                 placeholder="Телефон"
-                {...register("phone", { required: true })}
+                {...register("mobile", { required: true })}
               />
-              {errors.phone && <span>*Це поле обовязкове</span>}
+              {errors.mobile && <span>*Це поле обовязкове</span>}
             </div>
           </div>
           <div>
@@ -111,7 +172,7 @@ const Form = () => {
                 placeholder="E-mail"
                 {...register("email", { required: true })}
               />
-              {errors.phone && <span>*Це поле обовязкове</span>}
+              {errors.email && <span>*Це поле обовязкове</span>}
             </div>
 
             <div className="span_flex">
@@ -241,7 +302,13 @@ const Form = () => {
                 <p className="together_price"> {getTotalPrice()} грн</p>
               </>
             )}
-
+            {orderNo && (
+              <div className="popup">
+                <p style={{ color: "red" }}>
+                  Номер вашого замовлення: {orderNo}
+                </p>
+              </div>
+            )}
             <div className="together_img">
               <img className="img" alt="img" src={delivery} />
               <p>У вас є безкоштовна доставка!</p>

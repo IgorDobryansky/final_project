@@ -47,12 +47,11 @@ function ProductsCarousel(props) {
       <h1>{props.title}</h1>
       <Carousel
         showDots
-        infinite
         responsive={responsive}
         containerClass="carousel-container"
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item"
-        ssr
+        renderDotsOutside
       >
         {products}
       </Carousel>

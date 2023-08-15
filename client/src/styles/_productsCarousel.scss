@@ -1,4 +1,5 @@
 .carousel {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -11,6 +12,21 @@
     line-height: 37px;
     letter-spacing: 0em;
     text-align: center;
+  }
+  .react-multi-carousel-dot-list {
+    bottom: 140px;
+    li {
+      button {
+        border-radius: 0px;
+        border: none;
+        background: rgb(0, 0, 0);
+      }
+    }
+    .react-multi-carousel-dot--active {
+      button {
+        background: linear-gradient(65.81deg, #5e3928 -24.09%, #e4a16f 104.02%);
+      }
+    }
   }
   .catalog__button {
     width: 327px;
@@ -31,7 +47,46 @@
     }
   }
   .carousel-container {
+    width: 100%;
+    height: 100%;
     margin-top: 46px;
+    .react-multi-carousel-track {
+      li {
+        display: flex;
+        justify-content: center;
+        .card {
+          padding: 0;
+          width: 446px;
+          height: 650px;
+          .product_link {
+            .card__image {
+              height: 480px;
+            }
+          }
+          .card__description {
+            display: flex;
+            justify-content: space-between;
+            .card__price {
+              cursor: default;
+              margin-right: 10px;
+              .card__price__now {
+                font-size: 30px;
+              }
+            }
+            .product_link {
+              width: 257px;
+              h1 {
+                margin-left: 10px;
+                text-align: left;
+                width: 70%;
+                font-size: 20px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
     .react-multiple-carousel__arrow {
       border-radius: 0px;
       background: white;
@@ -45,21 +100,91 @@
         background: linear-gradient(92.18deg, #e4a16f 50.13%, #5e3928 92.93%);
       }
     }
-    .react-multi-carousel-dot-list {
-      li {
-        button {
-          border-radius: 0px;
-          border: none;
-          background: rgb(0, 0, 0);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1399px) {
+  .carousel {
+    .carousel-container {
+      .react-multi-carousel-track {
+        li {
+          .card {
+            width: 324px;
+            height: 450px;
+            .product_link {
+              .card__image {
+                height: 100%;
+              }
+            }
+            .card__description {
+              display: flex;
+              justify-content: space-between;
+              .card__price {
+                margin-top: 10px;
+                .card__price__old {
+                  font-size: 15px;
+                }
+                .card__price__now {
+                  font-size: 20px;
+                }
+              }
+              .product_link {
+                width: 200px;
+                h1 {
+                  margin-left: 10px;
+                  text-align: left;
+                  width: 70%;
+                  font-size: 17px;
+                  font-weight: 400;
+                }
+              }
+            }
+          }
         }
       }
-      .react-multi-carousel-dot--active {
-        button {
-          background: linear-gradient(
-            65.81deg,
-            #5e3928 -24.09%,
-            #e4a16f 104.02%
-          );
+    }
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .carousel {
+    .catalog__button {
+      width: 290px;
+    }
+    .carousel-container {
+      .react-multi-carousel-track {
+        li {
+          .card {
+            width: 290px;
+            height: 450px;
+            .product_link {
+              .card__image {
+                height: 260px;
+              }
+            }
+            .card__description {
+              display: flex;
+              justify-content: space-between;
+              .card__price {
+                margin-top: 10px;
+                .card__price__old {
+                  font-size: 15px;
+                }
+                .card__price__now {
+                  font-size: 20px;
+                }
+              }
+              .product_link {
+                width: 200px;
+                h1 {
+                  margin-left: 10px;
+                  text-align: left;
+                  width: 70%;
+                  font-size: 17px;
+                  font-weight: 400;
+                }
+              }
+            }
+          }
         }
       }
     }

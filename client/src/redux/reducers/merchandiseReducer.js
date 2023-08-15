@@ -1,13 +1,13 @@
 /* eslint-disable default-param-last */
-import { merchandiseTypes } from "../types";
+import types from "../types";
 
 const initialState = {
   products: []
 };
 
-export function merchandiseReducer(state = initialState, action) {
+function merchandiseReducer(state = initialState, action) {
   switch (action.type) {
-    case merchandiseTypes.GET_ALL_PRODUCTS:
+    case types.GET_ALL_PRODUCTS:
       return {
         ...state,
         products: action.payload.products
@@ -16,3 +16,5 @@ export function merchandiseReducer(state = initialState, action) {
       return state;
   }
 }
+
+export default merchandiseReducer;

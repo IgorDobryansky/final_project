@@ -11,7 +11,7 @@ import FilterButton from "../components/filter/FilterButton";
 import RadioButtonsFilter from "../components/filter/FilterRadio";
 import useViewport from "../custom_hooks/viewport";
 
-import { getProductsArray } from "../redux/actions/merchandise";
+import { getProductsArray } from "../redux/actions/merchandiseActions";
 
 import filterBtn from "../assets/images/filter-button/filter.png";
 import "../styles/_catalog.scss";

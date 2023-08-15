@@ -1,21 +1,21 @@
-const Product = require("../models/Product");
+const Product = require('../models/Product');
 
-const uniqueRandom = require("unique-random");
+const uniqueRandom = require('unique-random');
 const rand = uniqueRandom(0, 999999);
 
-const queryCreator = require("../commonHelpers/queryCreator");
-const filterParser = require("../commonHelpers/filterParser");
-const _ = require("lodash");
+const queryCreator = require('../commonHelpers/queryCreator');
+const filterParser = require('../commonHelpers/filterParser');
+const _ = require('lodash');
 
 exports.addImages = (req, res, next) => {
   if (req.files.length > 0) {
     res.json({
-      message: "Photos are received"
+      message: 'Photos are received',
     });
   } else {
     res.json({
       message:
-        "Something wrong with receiving photos at server. Please, check the path folder"
+        'Something wrong with receiving photos at server. Please, check the path folder',
     });
   }
 };
@@ -29,7 +29,7 @@ exports.addProduct = (req, res, next) => {
     productFields.name = productFields.name
       .toLowerCase()
       .trim()
-      .replace(/\s\s+/g, " ");
+      .replace(/\s\s+/g, ' ');
 
     // const imageUrls = req.body.previewImages.map(img => {
     //   return `/img/products/${productFields.itemNo}/${img.name}`;
@@ -38,7 +38,7 @@ exports.addProduct = (req, res, next) => {
     // productFields.imageUrls = _.cloneDeep(imageUrls);
   } catch (err) {
     res.status(400).json({
-      message: `Error happened on server: "${err}" `
+      message: `Error happened on server: "${err}" `,
     });
   }
 
@@ -48,20 +48,20 @@ exports.addProduct = (req, res, next) => {
 
   newProduct
     .save()
-    .then(product => res.json(product))
-    .catch(err =>
+    .then((product) => res.json(product))
+    .catch((err) =>
       res.status(400).json({
-        message: `Error happened on server: "${err}" `
+        message: `Error happened on server: "${err}" `,
       })
     );
 };
 
 exports.updateProduct = (req, res, next) => {
   Product.findOne({ _id: req.params.id })
-    .then(product => {
+    .then((product) => {
       if (!product) {
         return res.status(400).json({
-          message: `Product with id "${req.params.id}" is not found.`
+          message: `Product with id "${req.params.id}" is not found.`,
         });
       } else {
         const productFields = _.cloneDeep(req.body);
@@ -70,10 +70,10 @@ exports.updateProduct = (req, res, next) => {
           productFields.name = productFields.name
             .toLowerCase()
             .trim()
-            .replace(/\s\s+/g, " ");
+            .replace(/\s\s+/g, ' ');
         } catch (err) {
           res.status(400).json({
-            message: `Error happened on server: "${err}" `
+            message: `Error happened on server: "${err}" `,
           });
         }
 
@@ -84,17 +84,17 @@ exports.updateProduct = (req, res, next) => {
           { $set: updatedProduct },
           { new: true }
         )
-          .then(product => res.json(product))
-          .catch(err =>
+          .then((product) => res.json(product))
+          .catch((err) =>
             res.status(400).json({
-              message: `Error happened on server: "${err}" `
+              message: `Error happened on server: "${err}" `,
             })
           );
       }
     })
-    .catch(err =>
+    .catch((err) =>
       res.status(400).json({
-        message: `Error happened on server: "${err}" `
+        message: `Error happened on server: "${err}" `,
       })
     );
 };
@@ -108,30 +108,30 @@ exports.getProducts = (req, res, next) => {
     .skip(startPage * perPage - perPage)
     .limit(perPage)
     .sort(sort)
-    .then(products => res.send(products))
-    .catch(err =>
+    .then((products) => res.send(products))
+    .catch((err) =>
       res.status(400).json({
-        message: `Error happened on server: "${err}" `
+        message: `Error happened on server: "${err}" `,
       })
     );
 };
 
 exports.getProductById = (req, res, next) => {
   Product.findOne({
-    itemNo: req.params.itemNo
+    itemNo: req.params.itemNo,
   })
-    .then(product => {
+    .then((product) => {
       if (!product) {
         res.status(400).json({
-          message: `Product with itemNo ${req.params.itemNo} is not found`
+          message: `Product with itemNo ${req.params.itemNo} is not found`,
         });
       } else {
         res.json(product);
       }
     })
-    .catch(err =>
+    .catch((err) =>
       res.status(400).json({
-        message: `Error happened on server: "${err}" `
+        message: `Error happened on server: "${err}" `,
       })
     );
 };
@@ -141,40 +141,57 @@ exports.getProductsFilterParams = async (req, res, next) => {
   const perPage = Number(req.query.perPage);
   const startPage = Number(req.query.startPage);
   const sort = req.query.sort;
+  const date = req.query.date;
 
   try {
-    const products = await Product.find(mongooseQuery)
+    const queryConditions = {};
+    for (const key in mongooseQuery) {
+      if (mongooseQuery[key] === '*') {
+        queryConditions[key] = { $exists: true };
+      } else {
+        queryConditions[key] = mongooseQuery[key];
+      }
+    }
+
+    const query = Product.find(queryConditions);
+
+    if (date) {
+      const selectedDate = new Date(date);
+      const nextDay = new Date(selectedDate);
+      nextDay.setDate(selectedDate.getDate() + 1);
+
+      query.where('date').gte(selectedDate).lt(nextDay);
+    }
+
+    const products = await query
       .skip(startPage * perPage - perPage)
       .limit(perPage)
       .sort(sort);
 
-    const productsQuantity = await Product.find(mongooseQuery);
+    const productsQuantity = await Product.find(queryConditions);
 
     res.json({ products, productsQuantity: productsQuantity.length });
   } catch (err) {
     res.status(400).json({
-      message: `Error happened on server: "${err}" `
+      message: `Error happened on server: "${err}" `,
     });
   }
 };
 
 exports.searchProducts = async (req, res, next) => {
   if (!req.body.query) {
-    res.status(400).json({ message: "Query string is empty" });
+    res.status(400).json({ message: 'Query string is empty' });
   }
 
   //Taking the entered value from client in lower-case and trimed
-  let query = req.body.query
-    .toLowerCase()
-    .trim()
-    .replace(/\s\s+/g, " ");
+  let query = req.body.query.toLowerCase().trim().replace(/\s\s+/g, ' ');
 
   // Creating the array of key-words from taken string
-  let queryArr = query.split(" ");
+  let queryArr = query.split(' ');
 
   // Finding ALL products, that have at least one match
   let matchedProducts = await Product.find({
-    $text: { $search: query }
+    $text: { $search: query },
   });
 
   res.send(matchedProducts);

@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { SortingProductsArray } from "../../redux/actions/merchandise";
+import { SortingProductsArray } from "../../redux/actions/merchandiseActions";
 import "./_select.scss";
 
 const Select = (page) => {

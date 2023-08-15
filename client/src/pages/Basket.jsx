@@ -5,7 +5,11 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from "../components/ui/button/Button";
 import brokenImage from "../assets/images/broken-image.png";
 import deleteIcon from "../assets/images/basket/delete-product.png";
-import { removeProduct, increaseCount, decreaseCount } from "../redux/actions";
+import {
+  removeProduct,
+  decreaseCount,
+  increaseCount
+} from "../redux/actions/basketActions";
 
 const Basket = () => {
   const productsArray = useSelector((state) => state.basket.productsArray);

@@ -1,85 +1,85 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #0b3e3622;
+  padding: 2px;
+  height: 410px;
+  width: 320px;
+  &:hover {
+    border: 1px solid #0b3e36;
+  }
+  &__sale {
+    position: absolute;
+    top: 27px;
+    left: 0px;
+    background: #9b0000;
+    height: 36px;
+    width: 84px;
+    font-family: Mont;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ffffff;
+  }
+  &__image {
+    width: 100%;
+    height: 330px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-family: Mont;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 19px;
+      letter-spacing: 0em;
+      color: #031412;
+      cursor: pointer;
+      width: 180px;
+    }
+  }
+  &__price {
     display: flex;
     flex-direction: column;
-    position: relative;
-    border: 1px solid #0b3e3622;
-    padding: 5px;
-    height: 410px;
-    width: 320px;
-    &:hover {
-        border: 1px solid #0b3e36;
+    align-items: flex-end;
+    &__now {
+      color: #031412;
+      font-family: Mont;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 29px;
+      text-align: right;
     }
-    &__sale {
+    &__now.promotion {
+      color: #9b0000;
+    }
+    &__old {
+      font-family: Mont;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 19px;
+      text-align: right;
+      color: #5a5757;
+      position: relative;
+      &:before {
+        content: " ";
+        display: block;
+        width: 115%;
+        border-top: 2px solid #5a5757;
+        height: 11px;
         position: absolute;
-        top: 27px;
-        left: 0px;
-        background: #9B0000;
-        height: 36px;
-        width: 84px;
-        font-family: Mont;
-        font-size: 20px;
-        font-weight: 900;
-        line-height: 35px;
-        letter-spacing: 0em;
-        text-align: center;
-        color: #FFFFFF;
+        bottom: 0;
+        left: -7px;
+        transform: rotate(13deg);
+      }
     }
-    &__image {
-        width: 310px;
-        height: 330px;
-        cursor: pointer;
-        margin-bottom: 10px;
-    }
-
-    &__description {
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        h1 {
-            font-family: Mont;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 19px;
-            letter-spacing: 0em;
-            color: #031412;
-            cursor: pointer;
-            width:180px;
-        }
-    }
-    &__price {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        &__now {
-            color: #031412;
-            font-family: Mont;
-            font-size: 22px;
-            font-weight: 800;
-            line-height: 29px;
-            text-align: right;
-        }
-        &__now.promotion {
-            color: #9B0000;
-        }
-        &__old {
-            font-family: Mont;
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 19px;
-            text-align: right;
-            color: #5a5757;
-            position: relative;
-            &:before {
-            content: " ";
-            display: block;
-            width: 115%;
-            border-top: 2px solid #5a5757;
-            height: 11px;
-            position: absolute;
-            bottom: 0;
-            left: -7px;
-            transform: rotate(13deg);
-            }
-        }
-    }
+  }
 }

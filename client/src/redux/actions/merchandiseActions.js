@@ -1,9 +1,9 @@
 import api from "../../http/api";
-import { merchandiseTypes } from "../types";
+import types from "../types";
 
 export function getAllProducts(products) {
   return {
-    type: merchandiseTypes.GET_ALL_PRODUCTS,
+    type: types.GET_ALL_PRODUCTS,
     payload: {
       products
     }

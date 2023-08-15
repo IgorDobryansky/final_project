@@ -18,7 +18,7 @@ import {
   fetchNewProducts,
   fetchFeaturedProducts,
   fetchSaleProducts
-} from "../http/products";
+} from "../redux/actions/productsActions";
 
 function Home() {
   const dispatch = useDispatch();
@@ -30,18 +30,21 @@ function Home() {
     dispatch(fetchSaleProducts());
   }, [dispatch]);
 
-  const topProducts = useSelector((state) => state.products.topProducts);
-  const newProducts = useSelector((state) => state.products.topProducts);
-  const featuredProducts = useSelector((state) => state.products.topProducts);
-  const saleProducts = useSelector((state) => state.products.topProducts);
+  const products = useSelector((state) => state.products);
 
   return (
     <div className="container">
       <main className="main">
-        <ProductsCarousel title="Лідери продажу" products={topProducts} />
-        <ProductsCarousel title="Новинки" products={newProducts} />
-        <ProductsCarousel title="Ми рекомендуємо" products={featuredProducts} />
-        <ProductsCarousel title="Знижки" products={saleProducts} />
+        <ProductsCarousel
+          title="Лідери продажу"
+          products={products.topProducts}
+        />
+        <ProductsCarousel title="Новинки" products={products.newProducts} />
+        <ProductsCarousel
+          title="Ми рекомендуємо"
+          products={products.featuredProducts}
+        />
+        <ProductsCarousel title="Знижки" products={products.saleProducts} />
         <div className="about-us">
           <div className="about-us-wrapper">
             <h1>Чому обирають нас</h1>

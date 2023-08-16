@@ -38,7 +38,7 @@ const Form = () => {
     e.preventDefault();
     const promoCode = getValues().promo;
     const promoItem = promoData.find((promo) => promo.title === promoCode);
-    // eslint-disable-next-line no-console
+
     console.log(promoItem);
     if (promoItem) {
       setSelectedPromo(`${promoItem.sum}`);
@@ -52,7 +52,7 @@ const Form = () => {
   const onSubmit = (data) => {
     const promoCode = data.selectedPromo;
     setSelectedPromo(promoCode);
-    // eslint-disable-next-line no-console
+
     console.log(data);
   };
 

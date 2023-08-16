@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/function-component-definition */
 import React from "react";

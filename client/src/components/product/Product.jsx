@@ -99,10 +99,6 @@ const Product = () => (
         суддя його не відчує — йому поставлять низький бал.
       </p>
     </div>
-    <div className="product__options">
-      <h6>Вам також буде цікаво…</h6>
-      {/* <Carousel/> */}
-    </div>
   </div>
   </div>
 );

@@ -1,15 +1,16 @@
 import React from "react";
 import "../styles/_login.scss";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    
-  };
+  const onSubmit = (data) => {};
   return (
     <div>
       <Link to="/final_project/">
@@ -18,35 +19,43 @@ const LoginForm = () => {
         </button>
       </Link>
       <div className="container">
-        <form onSubmit={handleSubmit(onSubmit)} className="login-form" autoComplete="off">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="login-form"
+          autoComplete="off"
+        >
           <h1 className="login-h1">Авторизація</h1>
           <div>
-          <input   
-            placeholder="E-mail"
-            type="email"
-          {...register('email', {
-            required: '*Це поле обовязкове',
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: 'Неправильний формат Email',
-            },
-          })}
-            className="login-input"
-          />
-          {errors.email && <span className="login-span">{errors.email.message}</span>}
+            <input
+              placeholder="E-mail"
+              type="email"
+              {...register("email", {
+                required: "*Це поле обовязкове",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Неправильний формат Email"
+                }
+              })}
+              className="login-input"
+            />
+            {errors.email && (
+              <span className="login-span">{errors.email.message}</span>
+            )}
           </div>
           <div>
-          <input
-            placeholder="Пароль"
-            type="password"
-          {...register('password', {
-            required: '*Це поле обовязкове',
-          })}
-            className="login-input"
-          />
-          {errors.password && <span className="login-span">{errors.password.message}</span>}
+            <input
+              placeholder="Пароль"
+              type="password"
+              {...register("password", {
+                required: "*Це поле обовязкове"
+              })}
+              className="login-input"
+            />
+            {errors.password && (
+              <span className="login-span">{errors.password.message}</span>
+            )}
           </div>
-          
+
           {/* <Link  className="forgot-password">Забули пароль?</Link> */}
 
           <button type="submit" className="login-button">

@@ -5,18 +5,27 @@ import vector from "../../assets/images/card/vector.png";
 import twitter from "../../assets/images/card/twitter.svg";
 import facebook from "../../assets/images/card/facebook.svg";
 import instagram from "../../assets/images/card/instagram.svg";
-// import Carousel from "../Carousel";
+import { Link } from "react-router-dom"; 
 
-const Product = () => (
+const Product = () => (  
+  <div>
+     <div className="nav-link">
+            <Link to="/final_project/home" className="home_link">
+              Головна
+            </Link>
+            <span> / </span>
+            <Link to="/final_project/catalog/" className="catalog_link">
+              Каталог
+            </Link>
+          </div>
   <div className="product">
     <div className="product__wrapper">
-      {/* <div className="carusel">Карусель</div> */}
       <div>
         <img className="product__image" src={product} alt="Product" />
       </div>
       <div className="product__wrapper-content">
         <div className="product__description">
-          <h1>Кава Melitta Bella Crema Bio (750 г), зерно</h1>
+          <h1 className="product__description-title">Кава Melitta Bella Crema Bio (750 г), зерно</h1>
           <div className="product__description_available">
             <div>
               <img className="icon_vector" src={vector} alt="Available" />
@@ -73,9 +82,9 @@ const Product = () => (
         </div>
       </div>
     </div>
-    <div>
-      <h5>Опис</h5>
-      <p>
+    <div className="product__description-main">
+      <h5 className="product__description-main-h5">Опис</h5>
+      <p className="product__description-main-text">
         При описі аромату в першу чергу описується його характер: солодкий,
         насичений, пряний, освіжаючий, а також називаються чотирма
         дескрипторами. Учасник може порекомендувати суддям спосіб, яким краще
@@ -94,6 +103,7 @@ const Product = () => (
       <h6>Вам також буде цікаво…</h6>
       {/* <Carousel/> */}
     </div>
+  </div>
   </div>
 );
 

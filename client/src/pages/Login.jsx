@@ -1,15 +1,15 @@
 import React from "react";
 import "../styles/_login.scss";
-import { useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom"; 
 
 const LoginForm = () => {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: ""
-    }
-  });
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    
+  };
   return (
     <div>
       <Link to="/final_project/">
@@ -18,27 +18,36 @@ const LoginForm = () => {
         </button>
       </Link>
       <div className="container">
-        <form className="login-form" autoComplete="off">
+        <form onSubmit={handleSubmit(onSubmit)} className="login-form" autoComplete="off">
           <h1 className="login-h1">Авторизація</h1>
-          <input
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            id="email"
-            type="email"
+          <div>
+          <input   
             placeholder="E-mail"
-            onBlur={formik.handleBlur}
+            type="email"
+          {...register('email', {
+            required: '*Це поле обовязкове',
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: 'Неправильний формат Email',
+            },
+          })}
             className="login-input"
           />
+          {errors.email && <span className="login-span">{errors.email.message}</span>}
+          </div>
+          <div>
           <input
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            id="password"
-            type="password"
             placeholder="Пароль"
-            onBlur={formik.handleBlur}
+            type="password"
+          {...register('password', {
+            required: '*Це поле обовязкове',
+          })}
             className="login-input"
           />
-          <p className="forgot-password">Забули пароль?</p>
+          {errors.password && <span className="login-span">{errors.password.message}</span>}
+          </div>
+          
+          {/* <Link  className="forgot-password">Забули пароль?</Link> */}
 
           <button type="submit" className="login-button">
             Увійти

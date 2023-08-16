@@ -10,7 +10,9 @@ const LoginForm = () => {
     formState: { errors }
   } = useForm();
 
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div>
       <Link to="/final_project/">

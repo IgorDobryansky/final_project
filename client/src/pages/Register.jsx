@@ -11,7 +11,9 @@ const RegisterForm = () => {
     watch
   } = useForm();
 
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   const password = watch("password", "");
 

@@ -67,7 +67,6 @@ const Form = () => {
 
   const onSubmit = (data) => {
     if (!productsArray || productsArray.length === 0) {
-      // eslint-disable-next-line no-console
       console.error("The list of products is required, but absent!");
       return;
     }
@@ -127,7 +126,6 @@ const Form = () => {
         // console.log(dataFetch.order.orderNo);
       })
       .catch((error) => {
-        // eslint-disable-next-line no-console
         console.error("Error:", error);
       });
   };

@@ -14,6 +14,7 @@ module.exports = {
     "prefer-arrow-callback": "error",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
+    "no-console": 'off',
     "react/function-component-definition": [
       "error",
       {

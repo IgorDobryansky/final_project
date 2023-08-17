@@ -15,4 +15,4 @@ export function merchandiseReducer(state = initialState, action) {
     default:
       return state;
   }
-}
+};

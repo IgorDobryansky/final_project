@@ -9,7 +9,6 @@ import delivery from "../../assets/images/basket/delivery.png";
 
 const Form = () => {
   const productsArray = useSelector((state) => state.basket.productsArray);
-  // const dispatch = useDispatch();
   const promoData = [
     {
       id: 1,
@@ -161,9 +160,9 @@ const Form = () => {
             <div className="span_flex">
               <input
                 placeholder="Телефон"
-                {...register("mobile", { required: true })}
+                {...register("phone", { required: true })}
               />
-              {errors.mobile && <span>*Це поле обовязкове</span>}
+              {errors.phone && <span>*Це поле обовязкове</span>}
             </div>
           </div>
           <div>

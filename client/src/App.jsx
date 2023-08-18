@@ -13,6 +13,7 @@ import Basket from "./pages/Basket";
 import RegisterForm from "./pages/Register";
 import LoginForm from "./pages/Login";
 import Product from "./components/product/Product";
+// import CatalogTemp from "./pages/CatalogTemp";
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <Route path="/" element={<Outlet />}>
         <Route path="" element={<Home />} />
         <Route path="aboutUs" element={<AboutUs />} />
+        {/* <Route path="temp" element={<CatalogTemp />} /> */}
         <Route path="catalog" element={<Catalog />}>
           <Route path=":productId" element={<Product />} />
         </Route>

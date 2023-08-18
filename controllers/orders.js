@@ -9,6 +9,7 @@ const subtractProductsFromCart = require("../commonHelpers/subtractProductsFromC
 const _ = require("lodash");
 
 const uniqueRandom = require("unique-random");
+const getConfigs = require("../config/getConfigs");
 const rand = uniqueRandom(1000000, 9999999);
 
 exports.placeOrder = async (req, res, next) => {
@@ -97,12 +98,15 @@ exports.placeOrder = async (req, res, next) => {
       newOrder
         .save()
         .then(async order => {
+          const configs = await getConfigs();
+          console.log('configs111', configs);
           const mailResult = await sendMail(
             subscriberMail,
             letterSubject,
             letterHtml,
             res
           );
+          //   const mailResult = {};
 
           for (item of order.products){
             const id = item.product._id;

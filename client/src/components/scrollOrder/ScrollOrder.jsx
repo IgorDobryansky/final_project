@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import brokenImage from "../../assets/images/broken-image.png";
 
 const Scroll = () => {
   const productsArray = useSelector((state) => state.basket.productsArray);
@@ -8,60 +9,77 @@ const Scroll = () => {
     <div className="scroll-container">
       <div className="scroll-content">
         {productsArray.map((product) => (
-          <div key={product.id} className="item">
+          <div key={product.product.itemNo} className="item">
             <div className="mobile">
               <div className="img_quantity_mobile">
                 <img
-                  src={product.image}
-                  alt={product.name}
+                  src={
+                    product.product.imageUrls &&
+                    product.product.imageUrls.length
+                      ? product.product.imageUrls[0]
+                      : brokenImage
+                  }
+                  alt={product.product.name}
                   className="order_img"
                 />
-                <h3 className="name">{product.name}</h3>
+                <h3 className="name">{product.product.name}</h3>
               </div>
               <div className="name_price_mobile">
-                <p className="quantity_mobile">{product.count} шт.</p>
+                <p className="quantity_mobile">{product.cartQuantity} шт.</p>
                 <div className="product-card_price">
-                  {product.oldPrice && (
+                  {product.product.previousPrice && (
                     <div className="old_price">
-                      <span>{product.oldPrice} грн</span>
+                      <span>{product.product.previousPrice} грн</span>
                     </div>
                   )}
                   <span
                     className="current-price"
                     style={{
-                      color: product.oldPrice && "#9B0000",
-                      fontWeight: product.oldPrice && 800
+                      color: product.product.previousPrice && "#9B0000",
+                      fontWeight: product.product.previousPrice && 800
                     }}
                   >
-                    {product.price * product.count} грн
+                    {(
+                      parseFloat(product.product.currentPrice) *
+                      parseFloat(product.cartQuantity)
+                    ).toFixed(2)}{" "}
+                    грн
                   </span>
                 </div>
               </div>
             </div>
             <div className="desktop">
               <img
-                src={product.image}
-                alt={product.name}
+                src={
+                  product.product.imageUrls && product.product.imageUrls.length
+                    ? product.product.imageUrls[0]
+                    : brokenImage
+                }
+                alt={product.product.name}
                 className="order_img"
               />
               <div className="item_content">
-                <h3 className="name">{product.name}</h3>
+                <h3 className="name">{product.product.name}</h3>
                 <div className="block_price">
-                  <p className="quantity">{product.count} шт.</p>
+                  <p className="quantity">{product.cartQuantity} шт.</p>
                   <div className="price_position">
-                    {product.oldPrice && (
+                    {product.product.previousPrice && (
                       <div className="old_price">
-                        <span>{product.oldPrice} грн</span>
+                        <span>{product.product.previousPrice} грн</span>
                       </div>
                     )}
                     <span
                       className="current-price"
                       style={{
-                        color: product.oldPrice && "#9B0000",
-                        fontWeight: product.oldPrice && 800
+                        color: product.product.previousPrice && "#9B0000",
+                        fontWeight: product.product.previousPrice && 800
                       }}
                     >
-                      {product.price * product.count} грн
+                      {(
+                        parseFloat(product.product.currentPrice) *
+                        parseFloat(product.cartQuantity)
+                      ).toFixed(2)}{" "}
+                      грн
                     </span>
                   </div>
                 </div>

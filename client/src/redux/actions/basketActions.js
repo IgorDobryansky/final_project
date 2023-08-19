@@ -1,16 +1,25 @@
 import types from "../types";
 
-export const removeProduct = (id) => ({
+export const removeProduct = (itemNo) => ({
   type: types.REMOVE_PRODUCT,
-  payload: id
+  payload: itemNo
 });
 
-export const increaseCount = (id) => ({
+export const addProductToCart = (productItem, quantity) => ({
+  type: types.ADD_PRODUCT,
+  payload: { productItem, quantity }
+});
+
+export const increaseCount = (itemNo) => ({
   type: types.INCREASE_COUNT,
-  payload: id
+  payload: itemNo
 });
 
-export const decreaseCount = (id) => ({
+export const decreaseCount = (itemNo) => ({
   type: types.DECREASE_COUNT,
-  payload: id
+  payload: itemNo
+});
+
+export const clear = () => ({
+  type: types.CLEAR
 });

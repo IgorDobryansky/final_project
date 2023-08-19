@@ -73,8 +73,9 @@
             padding: 20px 0;
             display: flex;
             border-top: 1px solid #E6E8E7;
-            &__count-button{
-               font-family: "Montserrat";
+
+            &__count-button {
+              font-family: "Montserrat";
               font-size: 26px;
               font-weight: 400;
 
@@ -222,7 +223,7 @@
 
         &-summ {
           margin-top: 20px;
-         font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 800;
           font-size: 40px;
           color: rgb(3, 20, 18);
@@ -309,7 +310,7 @@
 
               .delete-product {
                 position: absolute;
-                top: 50%;
+                top: 18px;
                 right: 10px;
                 transform: translate(-10px, -50%);
                 cursor: pointer;
@@ -372,6 +373,7 @@
                 font-size: 20px;
                 line-height: 132.4%;
                 color: rgb(3, 20, 18);
+
 
                 .old-price {
                   position: absolute;
@@ -443,7 +445,7 @@
 
           &-summ {
             margin-top: 20px;
-           font-family: 'Montserrat';
+            font-family: 'Montserrat';
             font-weight: 800;
             font-size: 40px;
             color: rgb(3, 20, 18);
@@ -522,7 +524,7 @@
 
               .delete-product {
                 position: absolute;
-                top: 21px;
+                top: 18px;
                 right: 10px;
                 transform: translate(-10px, -50%);
                 cursor: pointer;
@@ -557,7 +559,7 @@
 
                   span {
                     display: block;
-                    font-size: 16;
+                    font-size: 16px;
                   }
                 }
               }
@@ -573,12 +575,16 @@
                   display: flex;
                   align-items: center;
                   justify-content: start;
-                 font-family: 'Montserrat';
+                  font-family: 'Montserrat';
                   font-style: normal;
                   font-weight: 600;
                   font-size: 20px;
                   line-height: 132.4%;
                   color: rgb(3, 20, 18);
+                }
+
+                .product-card__price {
+                  font-size: 16px;
                 }
 
                 &__price {
@@ -640,7 +646,8 @@
 
           .basket-image-wrapper {
             position: absolute;
-            right: 0;
+            //right: 0;
+            top: 10px;
             bottom: 31px;
             z-index: 0;
 
@@ -658,7 +665,7 @@
 
           &-summ {
             margin-top: 20px;
-           font-family: 'Montserrat';
+            font-family: 'Montserrat';
             font-weight: 800;
             font-size: 30px;
             color: rgb(3, 20, 18);

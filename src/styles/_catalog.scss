@@ -1,7 +1,28 @@
+.link_nav_catalog {
+    font-family: Mont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 24px auto;
+    max-width: 1400px;
+
+    .catalog_link {
+      font-weight: 800;
+    }
+
+    .general_link:hover {
+      background: linear-gradient(92.18deg, #5E3928 20.13%, #E4A16F 92.93%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -text-fill-color: transparent;
+    }
+  }
+
 .page {
     &__title {
-        width: 100%;
-        padding: 30px 0 30px 260px;
+        margin: 0 auto 24px auto;
+        max-width: 1400px;
         text-align: left;
         font-family: Mont;
         font-size: 50px;
@@ -13,43 +34,42 @@
 .form {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    padding: 15px 260px;
+    margin: 0 auto 45px auto;
+    max-width: 1250px;
 }
 
 hr.line {
-    width: calc(100% - 500px);
-    border: 1px solid #514c4c;
-    margin: 30px 0 30px 150px;
+    width: 80%;
+    border: 1px solid #514c4c80;
+    margin: 40px auto;
     height: 0px;
     opacity: 10%;
-}
-
-.catalog {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .cards-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    column-gap: 30px;
-    margin: 0 60px;
+    gap: 17px 17px;
+    height: min-content;
+    max-width: 1100px;
     &__wrapper {
        display: flex;
+       justify-content: center;
+       margin: 0 auto;
     }
 }
 
 .sidebar {
-    min-width: 260px;
-    background-color: #e4a16f;
+    width: 260px;
     padding: 0 30px;
 } 
 
 .MuiPagination-root {
-    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+    width: 100%;
     button {
         height: 48px;
         width: 38px;
@@ -62,5 +82,45 @@ hr.line {
     .Mui-selected {
         color: white;
         background: linear-gradient(92.18deg, #5e3928 20.13%, #e4a16f 92.93%);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1399px) {
+    .link_nav_catalog {
+        max-width: 630px;
+    }
+    .page {
+        &__title {
+            max-width: 630px;
+    }
+    }
+    .form {
+        max-width: 630px;
+    }
+    .cards-list {
+        max-width: 690px;
+    }
+    .sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .sidebar {
+        display: none;
+    }
+    .link_nav_catalog {
+        max-width: 300px;
+    }
+    .page {
+        &__title {
+            max-width: 300px;
+    }
+    }
+    .form {
+        max-width: 300px;
+    }
+    .cards-list {
+        max-width: 300px;
     }
 }
